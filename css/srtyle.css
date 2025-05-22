@@ -1,0 +1,337 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgb(0, 0, 0);
+  background-color: rgb(250, 250, 250);
+  font-family: 'Ancizar Sans', 'Boldonse', 'Ubuntu', sans-serif;
+}
+
+/* Header styling */
+.encabezado {
+  background-color: rgb(17, 65, 87);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrar todo horizontalmente */
+  padding: 31.5px 40px;
+  color: white;
+  font-weight: bold;
+  gap: 90px; /* Espacio entre h1, nav, y controles */
+}
+
+/* Title on the left */
+.encabezado h1 {
+  font-size: 1.2rem;
+  margin-right: 70px; /* Doble del espacio entre los ítems del menú */
+  line-height: 1.5;
+  flex-shrink: 0; /* Evita que se encoja */
+}
+
+h2{
+  margin: 20px;
+}
+
+#cursos-activos{
+  color: #5ca5e9;
+  font-size: 40px;
+}
+.Subtitle{
+  font-size: 45px;
+  margin-top: 35px;
+  margin-left: 1.4rem;
+  color: #103f6b;
+}
+
+.section{
+  display: block;
+  unicode-bidi: isolate;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.section p{
+  margin: 5px;
+}
+
+.section h3{
+  font-weight: normal;
+}
+
+.section h3{
+  color: #092947;
+}
+
+#pendientes{
+  color: #5ca5e9;
+  font-size: 40px;
+}
+
+#progreso{
+  color: #5ca5e9;
+  font-size: 40px;
+}
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 0 2rem;              /* separación interna lateral */
+  max-width: 1200px;            /* ancho máximo del grid */
+  margin: 0 auto 3rem auto;     /* centrado y separación inferior */
+}
+
+.section {
+  background-color: rgb(255, 255, 255);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(177, 177, 177, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombreado de las tarjetas */
+}
+
+div h3{
+  font-size: 40px;
+  text-decoration: none;
+  color: #103f6b;
+}
+
+
+/* Navigation container */
+.nav-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el nav horizontalmente */
+  flex-grow: 1;
+}
+
+/* Navigation menu as horizontal list */
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Navigation links */
+.nav-menu li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active or hovered nav link */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  background-color: rgb(38, 70, 83);
+  color: #00bcd4;
+}
+
+/* Controls container on the right */
+.controles {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Dark mode toggle button */
+#CambioDeModo {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+#CambioDeModo:hover {
+  background-color: rgb(38, 70, 83);
+}
+
+/* Language selector */
+#pais {
+  background-color: rgb(11, 37, 49);
+  border: 1px solid #00bcd4;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#pais:hover,
+#pais:focus {
+  background-color: rgb(38, 70, 83);
+  outline: none;
+}
+
+/* Profile picture label */
+.foto-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Profile picture */
+.foto-preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00bcd4;
+}
+
+.enrolled-header {
+  display: flex;
+  justify-content: space-between; /* Separa el texto y el botón a extremos opuestos */
+  align-items: center;             /* Alinea verticalmente el texto y el botón */
+  padding: 10px 20px;              /* Espacio interno opcional */
+}
+
+.enrolled-title p {
+  margin: 0; /* Quita espacio extra del párrafo si lo hay */
+  font-size: 1.6rem; /* Opcional: para ajustar tamaño de texto */
+}
+
+#more-data{
+  font-size: 17px;
+  padding: 10px 25px;
+  background-color: #099cf1;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Estilos para las tarjetas de cursos */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.curso-tarjeta {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.curso-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.barra-progreso-externa {
+  width: 100%;
+  height: 4px;
+  background-color: #e0e0e0;
+}
+
+.barra-progreso-interna {
+  height: 4px;
+  background-color: #4caf50; /* verde */
+  transition: width 0.3s ease;
+}
+
+.curso-info {
+  padding: 1rem 1.2rem 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.curso-info h4 {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #092947;
+  margin-bottom: 0.2rem;
+}
+
+.curso-info p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.8rem;
+}
+
+.progreso-detalle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #4caf50;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.texto-progreso {
+  color: #4caf50;
+}
+
+.btn-curso {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-curso:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .curso-img {
+    height: 140px;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-menu {
+    gap: 10px;
+  }
+
+  .encabezado h1 {
+    font-size: 1rem;
+  }
+
+  .encabezado {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .nav-contenedor {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .controles {
+    justify-content: flex-end;
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+[
+    {
+        "imagen": "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",
+        "titulo": "Curso de HTML Básico",
+        "profesor": "Ana Gómez",
+        "progreso": 75,
+        "leccionesCompletadas": 15,
+        "totalLecciones": 20
+    },
+    {
+        "imagen": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
+        "titulo": "Curso de CSS Intermedio",
+        "profesor": "Juan Pérez",
+        "progreso": 40,
+        "leccionesCompletadas": 8,
+        "totalLecciones": 20
+    },
+    {
+        "imagen": "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg",
+        "titulo": "JavaScript desde Cero",
+        "profesor": "Laura Ruiz",
+        "progreso": 20,
+        "leccionesCompletadas": 5,
+        "totalLecciones": 20
+    }
+]
