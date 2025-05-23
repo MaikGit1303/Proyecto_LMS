@@ -1,139 +1,353 @@
+/* Importar una fuente similar a la de la imagen, si no la tienes ya */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Usar la fuente de la imagen */
+    margin: 0;
+    background-color: #f4f7fa; /* Fondo blanco azulado claro */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilos para el Encabezado (Header) */
+.encabezado {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; /* Centrar verticalmente */
+    background-color: #2b3a4a; /* Color de fondo del header */
+    color: white;
+    padding: 15px 30px; /* Padding superior/inferior y lateral */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    height: 60px; /* Altura fija para el header */
+    box-sizing: border-box; /* Incluye padding en la altura */
+}
+
+.encabezado h1 {
+    margin: 0; /* Eliminar margen predeterminado del h1 */
+    font-size: 1.2em; /* Tamaño de fuente del logo */
+    font-weight: 700;
+}
+
+.nav-contenedor {
+    display: flex;
+    align-items: center; /* Centrar verticalmente el nav y los controles */
+    /* REMOVIDO: gap: 30px; Ya no es necesario con el justify-content: space-between en el nav-menu */
+    flex-grow: 1; /* Permitir que el contenedor de navegación crezca y empuje los controles a la derecha */
+    justify-content: flex-end; /* Alinear el menú y controles a la derecha */
+}
+
+.nav-menu {
+    list-style: none; /* Eliminar viñetas de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Aumentado el espacio entre los ítems del menú para que sea más ancho */
+    margin-right: auto; /* Empuja los elementos del menú hacia la izquierda, y los controles a la derecha */
+    padding-left: 20px; /* Ajuste para que el menú no esté pegado al LMS Portal */
+}
+
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    padding-bottom: 5px; /* Para la línea inferior */
+    transition: border-bottom 0.3s ease;
+}
+
+.nav-menu li a.activo,
+.nav-menu li a:hover {
+    border-bottom: 2px solid white; /* Línea blanca debajo del activo/hover */
+    padding-bottom: 3px; /* Pequeño padding para la línea */
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre los controles */
+}
+
+.controles button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: white;
+}
+
+.controles label {
+    color: white;
+    font-size: 0.9em;
+    font-weight: 600; /* Para "Language:" */
+}
+
+.controles select {
+    background-color: #3a4b5d; /* Fondo un poco más claro para el select */
+    color: white;
+    border: 1px solid #4a5b6d;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.controles .foto-label {
+    cursor: pointer;
+    display: flex; /* Para alinear la imagen y el texto (si hubiera) */
+    align-items: center;
+    gap: 8px; /* Espacio entre la foto y el nombre */
+}
+
+.controles .foto-preview {
+    width: 30px; /* Tamaño de la foto de perfil */
+    height: 30px;
+    border-radius: 50%; /* Hacerla circular */
+    object-fit: cover; /* Asegurar que la imagen cubra bien */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde sutil */
+}
+/* Estilo del nombre de usuario en el header */
+.controles .nombre-usuario {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+
 /* Estilos para la página de Cursos */
 
+main {
+    max-width: 1200px; /* Ancho máximo del contenido principal */
+    margin: 20px auto; /* Centrar el contenido y margen superior/inferior */
+    background-color: white; /* Fondo blanco para el área de contenido */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 30px; /* Padding interior del contenedor principal */
+}
+
 .titulo-principal {
-  font-size: 2.25rem;
-  margin: 2rem 0 1.5rem 0;
-  font-weight: 700;
-  color: #2c3e50;
-  text-align: left;
-  max-width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.8em; /* Ajustado para que coincida con la imagen */
+    margin: 0 0 20px 0; /* Ajustado margen */
+    font-weight: 600; /* Un poco menos negrita, similar a la imagen */
+    color: #333; /* Color de texto más general */
+    text-align: left;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee; /* Línea de separación */
 }
 
 .categoria-curso h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: #2c3e50;
-  border-bottom: 2px solid #3a8dde;
-  padding-bottom: 0.3rem;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.4em; /* Ajustado tamaño de la categoría */
+    font-weight: 600;
+    margin-bottom: 5px; /* Reducir margen para que la línea quede más cerca */
+    color: #555; /* Un color un poco más suave */
+    border-bottom: none; /* Eliminar el borde de aquí, lo pondremos en hr */
+    padding-bottom: 0;
+    width: auto; /* Que ocupe todo el ancho necesario */
+    margin-left: 0; /* Alinear a la izquierda */
+    margin-right: 0; /* Alinear a la izquierda */
 }
 
 .categoria-curso hr {
-  display: none;
+    display: block; /* Asegurarse de que la línea se muestre */
+    border: 0;
+    height: 2px; /* Grosor de la línea */
+    background-color: #3a8dde; /* Color azul de la línea */
+    width: 100px; /* Ancho específico de la línea, ajusta si necesitas más */
+    margin-left: 0; /* Alinear a la izquierda debajo del título */
+    margin-top: 5px; /* Pequeño margen superior para separar del h3 */
+    margin-bottom: 20px; /* Margen después de la línea */
 }
 
 .tarjetas-curso {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  justify-content: center;
-  overflow-x: auto;
-  padding-bottom: 1rem;
-  scrollbar-width: none; /* Firefox */
+    display: flex;
+    gap: 20px; /* Mantener el espacio entre tarjetas */
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centrar las tarjetas */
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
 }
 
 .tarjetas-curso::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+    display: none;
 }
 
 .tarjeta {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
-  width: 320px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  scroll-snap-align: start;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Aumentado el ancho de las tarjetas de 300px a 320px */
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    transition: transform 0.2s ease-in-out;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
 }
 
 .imagen-curso {
-  position: relative;
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+    position: relative;
+    height: 180px; /* Altura fija para el área de la imagen */
+    width: 100%;
+    overflow: hidden;
+    background-color: #ddd; /* Fondo de apoyo si la imagen no carga */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.imagen-curso img { /* Añadir esta regla si usas etiqueta <img> en tu HTML */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .etiqueta {
-  position: absolute;
-  top: 12px;
-  padding: 6px 14px;
-  border-radius: 16px;
-  font-size: 0.8rem;
-  color: white;
-  font-weight: 600;
-  backdrop-filter: blur(8px);
-  background-color: rgba(0, 0, 0, 0.6);
-  user-select: none;
+    position: absolute;
+    top: 10px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    color: white;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente sólido */
+    user-select: none;
 }
 
 .nivel {
-  left: 12px;
+    left: 10px;
 }
 
 .duracion {
-  right: 12px;
+    right: 10px;
 }
 
 .tarjeta h4 {
-  margin: 1rem 1rem 0.75rem 1rem;
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #2c3e50;
+    margin: 15px 15px 10px 15px;
+    font-weight: 600;
+    font-size: 1.1em;
+    color: #333;
 }
 
 .tarjeta p {
-  margin: 0 1rem 1.25rem 1rem;
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.4;
-  flex-grow: 1;
+    margin: 0 15px 15px 15px;
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1;
 }
 
 .botones {
-  display: flex;
-  gap: 1rem;
-  margin: 0 1rem 1.25rem 1rem;
+    display: flex;
+    gap: 10px;
+    margin: 0 15px 15px 15px;
+    margin-top: auto;
 }
 
 .btn {
-  flex: 1;
-  padding: 0.6rem 0;
-  border-radius: 30px;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
-  user-select: none;
+    flex: 1;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: 1px solid;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    text-align: center;
 }
 
 .inscribirse {
-  background-color: #3a8dde;
-  color: white;
-  border-color: #3a8dde;
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
 }
 
 .inscribirse:hover {
-  background-color: #2a6bb7;
-  border-color: #2a6bb7;
+    background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 .info {
-  background-color: transparent;
-  color: #3a8dde;
-  border-color: #3a8dde;
+    background-color: transparent;
+    color: #6c757d;
+    border-color: #6c757d;
 }
 
 .info:hover {
-  background-color: #e6f0fc;
-  border-color: #2a6bb7;
+    background-color: #e9ecef;
+    color: #495057;
+    border-color: #495057;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 992px) {
+    .nav-contenedor {
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: unset; /* Desactivar flex-grow en pantallas pequeñas */
+        justify-content: center; /* Centrar elementos cuando se apilan */
+    }
+    .nav-menu {
+        margin-right: 0; /* Eliminar el margen auto en pantallas pequeñas */
+        padding-left: 0; /* Eliminar el padding left */
+        justify-content: center;
+    }
+    .encabezado {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    main {
+        padding: 20px;
+    }
+    .tarjeta {
+        width: 300px; /* Ajustar el ancho para que quepa bien en la mayoría de las tabletas */
+    }
+}
+
+@media (max-width: 768px) {
+    .titulo-principal {
+        font-size: 1.6em;
+    }
+    .categoria-curso h3 {
+        font-size: 1.2em;
+    }
+    .tarjetas-curso {
+        flex-direction: column;
+        align-items: center;
+    }
+    .tarjeta {
+        width: 90%;
+        max-width: 320px;
+    }
+    .botones {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .encabezado {
+        padding: 10px;
+    }
+    .controles label, .controles select {
+        font-size: 0.8em;
+    }
+    .controles .nombre-usuario {
+        display: none;
+    }
+    .titulo-principal {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+    main {
+        padding: 15px;
+    }
 }
