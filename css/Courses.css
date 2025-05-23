@@ -1,7 +1,139 @@
-.encabezado h1 {
-  font-size: 1.2rem;
+/* Estilos para la página de Cursos */
+
+.titulo-principal {
+  font-size: 2.25rem;
+  margin: 2rem 0 1.5rem 0;
+  font-weight: 700;
+  color: #2c3e50;
+  text-align: left;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.nav-menu li a {
+.categoria-curso h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3a8dde;
+  padding-bottom: 0.3rem;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoria-curso hr {
+  display: none;
+}
+
+.tarjetas-curso {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tarjetas-curso::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-snap-align: start;
+}
+
+.imagen-curso {
+  position: relative;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.etiqueta {
+  position: absolute;
+  top: 12px;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.8rem;
+  color: white;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.nivel {
+  left: 12px;
+}
+
+.duracion {
+  right: 12px;
+}
+
+.tarjeta h4 {
+  margin: 1rem 1rem 0.75rem 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.tarjeta p {
+  margin: 0 1rem 1.25rem 1rem;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.botones {
+  display: flex;
+  gap: 1rem;
+  margin: 0 1rem 1.25rem 1rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.6rem 0;
+  border-radius: 30px;
+  font-weight: 700;
   font-size: 1rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.inscribirse {
+  background-color: #3a8dde;
+  color: white;
+  border-color: #3a8dde;
+}
+
+.inscribirse:hover {
+  background-color: #2a6bb7;
+  border-color: #2a6bb7;
+}
+
+.info {
+  background-color: transparent;
+  color: #3a8dde;
+  border-color: #3a8dde;
+}
+
+.info:hover {
+  background-color: #e6f0fc;
+  border-color: #2a6bb7;
 }
