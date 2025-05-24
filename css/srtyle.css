@@ -1,337 +1,166 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
 body {
-  color: rgb(0, 0, 0);
-  background-color: rgb(250, 250, 250);
-  font-family: 'Ancizar Sans', 'Boldonse', 'Ubuntu', sans-serif;
+    font-family: 'Open Sans', sans-serif; /* Usar la fuente de la imagen */
+    margin: 0;
+    background-color: #f4f7fa; /* Fondo blanco azulado claro */
+    color: #333;
+    line-height: 1.6;
+    font-size: 16px; /* Tamaño de fuente base para el body */
 }
 
-/* Header styling */
+/* Estilos para el Encabezado (Header) */
 .encabezado {
-  background-color: rgb(17, 65, 87);
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centrar todo horizontalmente */
-  padding: 31.5px 40px;
-  color: white;
-  font-weight: bold;
-  gap: 90px; /* Espacio entre h1, nav, y controles */
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    background-color: #2b3a4a; /* Color de fondo del header */
+    color: white;
+    padding: 15px 30px; /* Padding superior/inferior y lateral */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil */
+    min-height: 60px; /* Altura mínima para el header */
+    box-sizing: border-box; /* Incluye padding en la altura */
+    width: 100%;
+    gap: 30px; /* Espacio entre "LMS Portal" y el resto del header */
 }
 
-/* Title on the left */
 .encabezado h1 {
-  font-size: 1.2rem;
-  margin-right: 70px; /* Doble del espacio entre los ítems del menú */
-  line-height: 1.5;
-  flex-shrink: 0; /* Evita que se encoja */
+    margin: 0;
+    font-size: 1.3em;
+    font-weight: 700;
+    flex-shrink: 0;
+    padding-right: 0;
 }
 
-h2{
-  margin: 20px;
-}
-
-#cursos-activos{
-  color: #5ca5e9;
-  font-size: 40px;
-}
-.Subtitle{
-  font-size: 45px;
-  margin-top: 35px;
-  margin-left: 1.4rem;
-  color: #103f6b;
-}
-
-.section{
-  display: block;
-  unicode-bidi: isolate;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.section p{
-  margin: 5px;
-}
-
-.section h3{
-  font-weight: normal;
-}
-
-.section h3{
-  color: #092947;
-}
-
-#pendientes{
-  color: #5ca5e9;
-  font-size: 40px;
-}
-
-#progreso{
-  color: #5ca5e9;
-  font-size: 40px;
-}
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 0 2rem;              /* separación interna lateral */
-  max-width: 1200px;            /* ancho máximo del grid */
-  margin: 0 auto 3rem auto;     /* centrado y separación inferior */
-}
-
-.section {
-  background-color: rgb(255, 255, 255);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(177, 177, 177, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombreado de las tarjetas */
-}
-
-div h3{
-  font-size: 40px;
-  text-decoration: none;
-  color: #103f6b;
-}
-
-
-/* Navigation container */
 .nav-contenedor {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centra el nav horizontalmente */
-  flex-grow: 1;
+    display: flex;
+    align-items: center; /* Centrar verticalmente el nav y los controles */
+    flex-grow: 1; /* Permite que el contenedor de navegación ocupe el espacio restante */
+    justify-content: center; /* CENTRA los elementos internos del nav-contenedor (el menú y los controles) */
+    margin-left: 0;
+    gap: 30px; /* Aumentamos el espacio entre el menú y los controles */
 }
 
-/* Navigation menu as horizontal list */
+.nav-contenedor nav {
+    flex-shrink: 0;
+}
+
 .nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  align-items: center;
+    list-style: none; /* Eliminar viñetas de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Espacio entre los ítems del menú */
 }
 
-/* Navigation links */
 .nav-menu li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 12px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, border-bottom 0.3s ease;
+    white-space: nowrap;
 }
 
-/* Active or hovered nav link */
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  background-color: rgb(38, 70, 83);
-  color: #00bcd4;
+.nav-menu li a.activo {
+    background-color: #3a4b5d;
+    border-bottom: none;
 }
 
-/* Controls container on the right */
+.nav-menu li a:hover {
+    background-color: #3a4b5d;
+    border-bottom: none;
+}
+
 .controles {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
 }
 
-/* Dark mode toggle button */
-#CambioDeModo {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+.controles button {
+    background: none;
+    border: none;
+    font-size: 1.3em;
+    cursor: pointer;
+    color: white;
 }
 
-#CambioDeModo:hover {
-  background-color: rgb(38, 70, 83);
+.controles label {
+    color: white;
+    font-size: 0.95em;
+    font-weight: 600;
 }
 
-/* Language selector */
-#pais {
-  background-color: rgb(11, 37, 49);
-  border: 1px solid #00bcd4;
-  color: white;
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.controles select {
+    background-color: #3a4b5d;
+    color: white;
+    border: 1px solid #4a5b6d;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 0.95em;
+    cursor: pointer;
 }
 
-#pais:hover,
-#pais:focus {
-  background-color: rgb(38, 70, 83);
-  outline: none;
+.controles .foto-label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* Profile picture label */
-.foto-label {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+.controles .foto-preview {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Profile picture */
-.foto-preview {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #00bcd4;
+.controles .nombre-usuario {
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.enrolled-header {
-  display: flex;
-  justify-content: space-between; /* Separa el texto y el botón a extremos opuestos */
-  align-items: center;             /* Alinea verticalmente el texto y el botón */
-  padding: 10px 20px;              /* Espacio interno opcional */
+.controles .nombre-usuario::after {
+    content: '\25BC'; /* Esto es un triángulo hacia abajo */
+    font-size: 0.7em;
+    margin-left: 3px;
+    vertical-align: middle;
 }
 
-.enrolled-title p {
-  margin: 0; /* Quita espacio extra del párrafo si lo hay */
-  font-size: 1.6rem; /* Opcional: para ajustar tamaño de texto */
-}
-
-#more-data{
-  font-size: 17px;
-  padding: 10px 25px;
-  background-color: #099cf1;
-  color: white;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Estilos para las tarjetas de cursos */
-.contenedor-tarjetas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.curso-tarjeta {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.curso-img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
-.barra-progreso-externa {
-  width: 100%;
-  height: 4px;
-  background-color: #e0e0e0;
-}
-
-.barra-progreso-interna {
-  height: 4px;
-  background-color: #4caf50; /* verde */
-  transition: width 0.3s ease;
-}
-
-.curso-info {
-  padding: 1rem 1.2rem 1.5rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  flex-grow: 1;
-}
-
-.curso-info h4 {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #092947;
-  margin-bottom: 0.2rem;
-}
-
-.curso-info p {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 0.8rem;
-}
-
-.progreso-detalle {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #4caf50;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.texto-progreso {
-  color: #4caf50;
-}
-
-.btn-curso {
-  background-color: #3498db;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.6rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn-curso:hover {
-  background-color: #2980b9;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .contenedor-tarjetas {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .curso-img {
-    height: 140px;
-  }
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-menu {
-    gap: 10px;
-  }
-
-  .encabezado h1 {
-    font-size: 1rem;
-  }
-
-  .encabezado {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .nav-contenedor {
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .controles {
-    justify-content: flex-end;
-    width: 100%;
-  }
+@media (max-width: 992px) {
+    .nav-contenedor {
+        flex-direction: column;
+        gap: 15px;
+        flex-grow: unset;
+        justify-content: center;
+        margin-left: 0;
+    }
+    .nav-menu {
+        gap: 15px;
+    }
+    .encabezado {
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+        align-items: flex-start;
+    }
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    .nav-menu li a {
+        padding: 8px 10px;
+        font-size: 0.95em;
+    }
+    .controles label, .controles select, .controles .nombre-usuario {
+        font-size: 0.9em;
+    }
 }

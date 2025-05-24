@@ -1,84 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Inicio LMS Portal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Boldonse&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="CSS/srtyle.css"> 
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Portal - Dashboard</title>
+    <link rel="stylesheet" href="css/srtyle.css">
+    </head>
 <body>
-<!-- Header: Contiene el título principal y la navegación del portal LMS -->
-<header class="encabezado">
-    <h1>LMS Portal</h1>
-    <!-- Navegación principal con enlaces a diferentes secciones -->
-    <nav class="nav-contenedor">
-    <ul class="nav-menu">
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="HTML/Courses.html">Courses</a></li>
-        <li><a href="HTML/Assignments.html">Assignments</a></li>
-        <li><a href="HTML/Progress.html">Progress</a></li>
-        <li><a href="HTML/Profile.html">Profile</a></li>
-    </ul>
 
-    <!-- Controles de usuario: cambio de modo, selección de idioma y foto de perfil -->
-    <div class="controles">
-        <button id="CambioDeModo" aria-label="Cambiar modo oscuro">🌙</button>
-
-        <label for="pais">Idioma:</label>
-        <select name="pais" id="pais">
-        <option value="english">English</option>
-        <option value="español">Español</option>
-        <option value="français">Français</option>
-        <option value="deutsch">Deutsch</option>
-        </select>
-
-        <label for="fotoPerfil" class="foto-label">
-        <input type="file" accept="image/*" id="fotoPerfil" name="fotoPerfil" hidden />
-        <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="Foto de perfil" class="foto-preview" />
-        </label>
-    </div>
-    </nav>
-</header>
-
-<!-- Main: Contenido principal del portal LMS -->
-<main>
-    <h2 class="Subtitle">Dashboard</h2>
-
-    <!-- Sección de resumen con información clave del usuario -->
-    <section class="dashboard">
-    <div class="section">
-        <h3>Active Courses</h3>
-        <p id="cursos-activos">3</p>
-    </div>
-    <div class="section">
-        <h3>Pending Assignments</h3>
-        <p id="pendientes">2</p>
-    </div>   
-    <div class="section">
-        <h3>Overall Progress</h3>
-        <p id="progreso">75%</p>
-    </div>
-    </section>
-
-    <!-- Sección para mostrar los cursos en los que el usuario está inscrito -->
-    <section class="enrolled-header">
-    <div class="enrolled-title">
-        <p>My Enrolled Courses</p>
-    </div>
-    <button id="more-data">Browse More Courses</button>
-    </section>
-
-    <!-- Sección de las tarjetas -->
-    <!-- Lista de tarjetas de cursos con detalles y progreso -->
-    <section class="cursos-lista">
-        <section class="cursos-enrolados">
-            <div class="contenedor-tarjetas">
-        
+    <header class="encabezado">
+        <h1>LMS Portal</h1>
+        <div class="nav-contenedor">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" class="activo">Dashboard</a></li>
+                    <li><a href="../HTML/Courses.html" >Courses</a></li>
+                    <li><a href="../HTML/Assignments.html">Assignments</a></li>
+                    <li><a href="../HTML/Progress.html">Progress</a></li>
+                    <li><a href="../HTML/Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="controles">
+                <button aria-label="Toggle dark mode">🌙</button> <label for="language-select"></label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+                <div class="foto-label">
+                    <img src="../IMG/Courses/Perfil.jpeg" alt="User Photo" class="foto-preview">
+                    <span class="nombre-usuario">John Doe</span>
+                </div>
             </div>
-            <script src="JS/scripr.js"></script>
-        </section>
-        
-        
+        </div>
+    </header>
+
+<!-- Main content placeholder -->
+<main>
+    <h2 class="Subtitle">Deshboard</h2>
+    <!-- Existing content should be here -->
+</main>
+
+<script src="js/scripr.js"></script>
+</body>
+</html>
