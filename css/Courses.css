@@ -7,6 +7,7 @@ body {
     background-color: #f4f7fa; /* Fondo blanco azulado claro */
     color: #333;
     line-height: 1.6;
+    font-size: 16px; /* Tamaño de fuente base para el body */
 }
 
 /* Estilos para el Encabezado (Header) */
@@ -25,7 +26,7 @@ body {
 
 .encabezado h1 {
     margin: 0; /* Eliminar margen predeterminado del h1 */
-    font-size: 1.2em; /* Tamaño de fuente del logo */
+    font-size: 1.3em;
     font-weight: 700;
     flex-shrink: 0; /* Evita que el título se encoja */
 }
@@ -44,28 +45,27 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Reducido el espacio entre los ítems del menú para que se vea más compacto como en la imagen */
-    /* REMOVIDO: margin-right: auto; - Ya no es necesario con el flex-grow y justify-content en el padre */
+    gap: 15px;
 }
 
 .nav-menu li a {
     color: white;
     text-decoration: none;
-    font-size: 0.9em;
-    padding: 8px 15px; /* Mantiene el padding para hacer los botones más anchos */
-    border-radius: 4px; /* Un poco de redondeo en los botones */
+    font-size: 1em;
+    padding: 8px 15px;
+    border-radius: 4px;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
     white-space: nowrap; /* Evita que el texto de los ítems del menú se rompa en varias líneas */
 }
 
 .nav-menu li a.activo {
     background-color: #3a4b5d; /* Fondo para el elemento activo */
-    border-bottom: none; /* No queremos la línea si hay fondo */
+    border-bottom: none;
 }
 
 .nav-menu li a:hover {
     background-color: #3a4b5d; /* Fondo al pasar el mouse */
-    border-bottom: none; /* No queremos la línea si hay fondo */
+    border-bottom: none;
 }
 
 .controles {
@@ -78,14 +78,14 @@ body {
 .controles button {
     background: none;
     border: none;
-    font-size: 1.2em;
+    font-size: 1.3em;
     cursor: pointer;
     color: white;
 }
 
 .controles label {
     color: white;
-    font-size: 0.9em;
+    font-size: 0.95em;
     font-weight: 600; /* Para "Language:" */
 }
 
@@ -95,7 +95,7 @@ body {
     border: 1px solid #4a5b6d;
     border-radius: 4px;
     padding: 5px 10px;
-    font-size: 0.9em;
+    font-size: 0.95em;
     cursor: pointer;
 }
 
@@ -107,8 +107,8 @@ body {
 }
 
 .controles .foto-preview {
-    width: 30px; /* Tamaño de la foto de perfil */
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%; /* Hacerla circular */
     object-fit: cover; /* Asegurar que la imagen cubra bien */
     border: 1px solid rgba(255, 255, 255, 0.5); /* Borde sutil */
@@ -117,7 +117,7 @@ body {
 .controles .nombre-usuario {
     color: white;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 0.95em;
 }
 
 
@@ -133,25 +133,35 @@ main {
 }
 
 .titulo-principal {
-    font-size: 1.8em;
+    font-size: 2em;
     margin: 0 0 20px 0;
     font-weight: 600;
     color: #333;
     text-align: left;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
+    /* Nuevo: Añadimos padding-left para alinear con las categorías y tarjetas */
+    padding-left: 20px; /* Este valor debe coincidir con el padding-left de .categoria-curso */
+}
+
+.categoria-curso {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    padding-left: 20px; /* Esto empujará el h3 y la hr a la derecha */
 }
 
 .categoria-curso h3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: 600;
     margin-bottom: 5px;
     color: #555;
     border-bottom: none;
     padding-bottom: 0;
     width: auto;
+    text-align: left;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: auto;
 }
 
 .categoria-curso hr {
@@ -159,8 +169,10 @@ main {
     border: 0;
     height: 2px;
     background-color: #3a8dde;
-    width: 100%; /* ¡Cambiado a 100% para que sea tan larga como el contenedor de las tarjetas! */
+    width: 100%; /* Ocupa el 100% del contenedor padre (.categoria-curso) */
+    max-width: 1090px; /* Esto asegura que no se extienda más allá del ancho de 3 tarjetas + gaps */
     margin-left: 0;
+    margin-right: auto;
     margin-top: 5px;
     margin-bottom: 20px;
 }
@@ -169,10 +181,14 @@ main {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start; /* Alineamos las tarjetas al inicio */
+    margin-left: 0;
+    margin-right: 0; /* Asegurarse de que no tenga margen derecho */
     padding-bottom: 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    width: calc(100% - 20px); /* Ajustamos el ancho para compensar el padding-left del .categoria-curso */
+    max-width: 1090px; /* Limita el ancho del grupo de tarjetas */
 }
 
 .tarjetas-curso::-webkit-scrollbar {
@@ -216,9 +232,9 @@ main {
 .etiqueta {
     position: absolute;
     top: 10px;
-    padding: 5px 10px;
+    padding: 6px 12px;
     border-radius: 4px;
-    font-size: 0.8em;
+    font-size: 0.85em;
     color: white;
     font-weight: 600;
     background-color: rgba(0, 0, 0, 0.6);
@@ -234,15 +250,15 @@ main {
 }
 
 .tarjeta h4 {
-    margin: 15px 15px 10px 15px;
+    margin: 18px 18px 12px 18px;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.2em;
     color: #333;
 }
 
 .tarjeta p {
-    margin: 0 15px 15px 15px;
-    font-size: 0.9em;
+    margin: 0 18px 18px 18px;
+    font-size: 1em;
     color: #666;
     line-height: 1.5;
     flex-grow: 1;
@@ -251,16 +267,16 @@ main {
 .botones {
     display: flex;
     gap: 10px;
-    margin: 0 15px 15px 15px;
+    margin: 0 18px 18px 18px;
     margin-top: auto;
 }
 
 .btn {
     flex: 1;
-    padding: 10px 0;
+    padding: 12px 0;
     border-radius: 5px;
     font-weight: 600;
-    font-size: 0.9em;
+    font-size: 0.95em;
     cursor: pointer;
     border: 1px solid;
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
@@ -296,6 +312,15 @@ main {
     .tarjeta {
         width: 300px;
     }
+    .categoria-curso hr {
+        max-width: 940px;
+    }
+    .tarjetas-curso {
+        max-width: 940px;
+    }
+    .titulo-principal, .categoria-curso {
+        padding-left: 20px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -313,21 +338,49 @@ main {
         height: auto;
         flex-direction: column;
         padding: 15px;
-        align-items: flex-start; /* Ajuste para el header apilado */
+        align-items: flex-start;
     }
     .nav-menu {
         flex-wrap: wrap;
         justify-content: center;
-        width: 100%; /* Asegurar que el menú ocupe el ancho completo */
+        width: 100%;
     }
     .nav-menu li a {
-        padding: 8px 10px; /* Reducir padding en dispositivos móviles */
+        padding: 8px 10px;
+        font-size: 0.95em;
+    }
+    .controles label, .controles select, .controles .nombre-usuario {
+        font-size: 0.9em;
     }
     main {
         padding: 20px;
     }
+    .titulo-principal {
+        font-size: 1.8em;
+    }
+    .categoria-curso h3 {
+        font-size: 1.4em;
+    }
     .tarjeta {
         width: 320px;
+    }
+    .categoria-curso hr {
+        max-width: 660px;
+    }
+    .tarjetas-curso {
+        max-width: 660px;
+    }
+    .titulo-principal, .categoria-curso {
+        padding-left: 15px;
+    }
+    .tarjeta h4 {
+        font-size: 1.15em;
+    }
+    .tarjeta p {
+        font-size: 0.95em;
+    }
+    .btn {
+        font-size: 0.9em;
     }
 }
 
@@ -340,11 +393,24 @@ main {
     }
     .tarjetas-curso {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
     .tarjeta {
         width: 90%;
         max-width: 320px;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    .categoria-curso hr {
+        width: 90%;
+        max-width: 320px;
+    }
+    .titulo-principal, .categoria-curso {
+        padding-left: 15px;
     }
     .botones {
         flex-direction: column;
@@ -368,5 +434,12 @@ main {
     }
     main {
         padding: 15px;
+    }
+    .titulo-principal, .categoria-curso {
+        padding-left: 10px;
+    }
+    .categoria-curso hr {
+        width: 90%;
+        max-width: 300px;
     }
 }

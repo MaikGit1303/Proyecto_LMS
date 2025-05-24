@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Courses - LMS Portal</title>
-    <link rel="stylesheet" href="../css/style.css" /> <link rel="stylesheet" href="../css/Courses.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Portal - Courses</title>
+    <link rel="stylesheet" href="../css/Courses.css">
+    </head>
 <body>
+
     <header class="encabezado">
         <h1>LMS Portal</h1>
-        <nav class="nav-contenedor">
-            <ul class="nav-menu">
-                <li><a href="../index.html">Dashboard</a></li>
-                <li><a href="Courses.html" class="activo">Courses</a></li>
-                <li><a href="Assignments.html">Assignments</a></li>
-                <li><a href="Progress.html">Progress</a></li>
-                <li><a href="Profile.html">Profile</a></li>
-            </ul>
+        <div class="nav-contenedor">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="activo">Dashboard</a></li>
+                    <li><a href="#" class="activo">Courses</a></li>
+                    <li><a href="#">Assignments</a></li>
+                    <li><a href="#">Progress</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
             <div class="controles">
-                <button id="CambioDeModo" aria-label="Toggle dark mode">🌙</button>
-                <label for="pais">Language:</label>
-                <select name="pais" id="pais">
-                    <option value="english" selected>English</option>
-                    <option value="español">Español</option>
-                    <option value="français">Français</option>
-                    <option value="deutsch">Deutsch</option>
+                <button aria-label="Toggle dark mode">&#x263D;</button> <label for="language-select">Language:</label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
                 </select>
-                <label for="fotoPerfil" class="foto-label">
-                    <input type="file" accept="image/*" id="fotoPerfil" name="fotoPerfil" hidden />
-                    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="Profile photo" class="foto-preview" />
-                </label>
-                <span class="nombre-usuario">John Doe</span> </div>
-        </nav>
+                <div class="foto-label">
+                    <img src="https://via.placeholder.com/35" alt="User Photo" class="foto-preview">
+                    <span class="nombre-usuario">John Doe</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -39,11 +39,11 @@
 
         <section class="categoria-curso">
             <h3>Video Games</h3>
-            <hr />
+            <hr>
             <div class="tarjetas-curso">
-                <article class="tarjeta">
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/1018329/pexels-photo-1018329.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Unity Game Development">
+                        <img src="https://via.placeholder.com/350x180/7e7e7e/ffffff?text=Unity+Game+Development" alt="Unity Game Development">
                         <span class="etiqueta nivel">Intermediate</span>
                         <span class="etiqueta duracion">12 weeks</span>
                     </div>
@@ -53,10 +53,11 @@
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Unreal Engine Basics">
+                        <img src="https://via.placeholder.com/350x180/5e5e5e/ffffff?text=Unreal+Engine+Basics" alt="Unreal Engine Basics">
                         <span class="etiqueta nivel">Beginner</span>
                         <span class="etiqueta duracion">8 weeks</span>
                     </div>
@@ -66,10 +67,11 @@
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/6843916/pexels-photo-6843916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Game Design Principles">
+                        <img src="https://via.placeholder.com/350x180/3e3e3e/ffffff?text=Game+Design+Principles" alt="Game Design Principles">
                         <span class="etiqueta nivel">All Levels</span>
                         <span class="etiqueta duracion">10 weeks</span>
                     </div>
@@ -79,30 +81,31 @@
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
 
         <section class="categoria-curso">
             <h3>Backend</h3>
-            <hr />
+            <hr>
             <div class="tarjetas-curso">
-                <article class="tarjeta">
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Node.js Development">
+                        <img src="https://via.placeholder.com/350x180/7e7e7e/ffffff?text=Node.js+Development" alt="Node.js Development">
                         <span class="etiqueta nivel">Advanced</span>
                         <span class="etiqueta duracion">14 weeks</span>
                     </div>
                     <h4>Node.js Development</h4>
-                    <p>Build high-performance backend services with Node.js. Cover Express.js, MongoDB, and microservices...</p>
+                    <p>Build high-performance backend services with Node.js. Cover Express.js, MongoDB, and microservices.</p>
                     <div class="botones">
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Database Design">
+                        <img src="https://via.placeholder.com/350x180/5e5e5e/ffffff?text=Database+Design" alt="Database Design">
                         <span class="etiqueta nivel">Intermediate</span>
                         <span class="etiqueta duracion">10 weeks</span>
                     </div>
@@ -112,10 +115,11 @@
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="API Development">
+                        <img src="https://via.placeholder.com/350x180/3e3e3e/ffffff?text=API+Development" alt="API Development">
                         <span class="etiqueta nivel">Intermediate</span>
                         <span class="etiqueta duracion">8 weeks</span>
                     </div>
@@ -125,58 +129,106 @@
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
 
         <section class="categoria-curso">
             <h3>Frontend</h3>
-            <hr />
+            <hr>
             <div class="tarjetas-curso">
-                <article class="tarjeta">
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/5926392/pexels-photo-5926392.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Frontend Development">
+                        <img src="https://via.placeholder.com/350x180/7e7e7e/ffffff?text=React+Development" alt="React Development">
                         <span class="etiqueta nivel">Advanced</span>
                         <span class="etiqueta duracion">12 weeks</span>
                     </div>
-                    <h4>Frontend Development</h4>
-                    <p>Master modern web technologies including HTML, CSS, JavaScript frameworks like React, and responsive design.</p>
+                    <h4>React Development</h4>
+                    <p>Master modern frontend with React.js. Build dynamic and responsive user interfaces.</p>
                     <div class="botones">
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/1036808/pexels-photo-1036808.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="UI/UX Design">
+                        <img src="https://via.placeholder.com/350x180/5e5e5e/ffffff?text=Vue.js+Fundamentals" alt="Vue.js Fundamentals">
                         <span class="etiqueta nivel">Advanced</span>
                         <span class="etiqueta duracion">14 weeks</span>
                     </div>
-                    <h4>UI/UX Design</h4>
-                    <p>Learn principles of user interface and user experience design. Create intuitive and appealing digital products.</p>
+                    <h4>Vue.js Fundamentals</h4>
+                    <p>Learn the essentials of Vue.js for building interactive web applications. Explore components and reactivity.</p>
                     <div class="botones">
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
-                <article class="tarjeta">
+                </div>
+
+                <div class="tarjeta">
                     <div class="imagen-curso">
-                        <img src="https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Responsive Web Design">
+                        <img src="https://via.placeholder.com/350x180/3e3e3e/ffffff?text=CSS+Animations" alt="CSS Animations">
                         <span class="etiqueta nivel">Intermediate</span>
                         <span class="etiqueta duracion">6 weeks</span>
                     </div>
-                    <h4>Responsive Web Design</h4>
-                    <p>Design websites that adapt seamlessly to any screen size, from desktops to mobile phones, using CSS Grid and Flexbox.</p>
+                    <h4>CSS Animations</h4>
+                    <p>Add engaging animations to your websites with advanced CSS techniques and transitions.</p>
                     <div class="botones">
                         <button class="btn inscribirse">Enroll Now</button>
                         <button class="btn info">More Info</button>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
 
+        <section class="categoria-curso">
+            <h3>Schools</h3>
+            <hr>
+            <div class="tarjetas-curso">
+                <div class="tarjeta">
+                    <div class="imagen-curso">
+                        <img src="https://via.placeholder.com/350x180/7e7e7e/ffffff?text=Mathematics+101" alt="Mathematics 101">
+                        <span class="etiqueta nivel">Beginner</span>
+                        <span class="etiqueta duracion">16 weeks</span>
+                    </div>
+                    <h4>Mathematics 101</h4>
+                    <p>Introduction to core mathematical concepts including algebra, calculus, and probability theory.</p>
+                    <div class="botones">
+                        <button class="btn inscribirse">Enroll Now</button>
+                        <button class="btn info">More Info</button>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="imagen-curso">
+                        <img src="https://via.placeholder.com/350x180/5e5e5e/ffffff?text=Physics+Basics" alt="Physics Basics">
+                        <span class="etiqueta nivel">Beginner</span>
+                        <span class="etiqueta duracion">16 weeks</span>
+                    </div>
+                    <h4>Physics Basics</h4>
+                    <p>Explore fundamental physics principles including mechanics, thermodynamics, and wave theory.</p>
+                    <div class="botones">
+                        <button class="btn inscribirse">Enroll Now</button>
+                        <button class="btn info">More Info</button>
+                    </div>
+                </div>
+
+                <div class="tarjeta">
+                    <div class="imagen-curso">
+                        <img src="https://via.placeholder.com/350x180/3e3e3e/ffffff?text=Chemistry+Essentials" alt="Chemistry Essentials">
+                        <span class="etiqueta nivel">Beginner</span>
+                        <span class="etiqueta duracion">16 weeks</span>
+                    </div>
+                    <h4>Chemistry Essentials</h4>
+                    <p>Learn core chemistry concepts including atomic structure, chemical bonding, and reactions.</p>
+                    <div class="botones">
+                        <button class="btn inscribirse">Enroll Now</button>
+                        <button class="btn info">More Info</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="../js/Courses.js"></script>
-</body>
+    </body>
 </html>
