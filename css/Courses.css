@@ -216,7 +216,7 @@ main {
 
 .tarjeta {
     background-color: white;
-    border-radius: 8px;
+    border-radius: 15px; /* Más redondeado */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
     min-height: 400px;
@@ -224,7 +224,7 @@ main {
     flex-direction: column;
     overflow: hidden;
     font-family: 'Open Sans', sans-serif;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out; /* Transición para el translateY */
 }
 
 .tarjeta:hover {
@@ -237,8 +237,10 @@ main {
     width: 100%;
     overflow: hidden;
     background-color: #ddd;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 15px; /* Coincide con el radio de la tarjeta */
+    border-top-right-radius: 15px; /* Coincide con el radio de la tarjeta */
+    /* Añadimos un efecto de sombra interna para el efecto "negrito" */
+    box-shadow: inset 0px 10px 15px -5px rgba(0,0,0,0.3); /* Sombra interna sutil */
 }
 
 .imagen-curso img {
@@ -246,6 +248,13 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
+    /* Agregamos una transición para el efecto de zoom */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Nueva regla: cuando el mouse esté sobre la tarjeta, la imagen dentro de imagen-curso se agranda */
+.tarjeta:hover .imagen-curso img {
+    transform: scale(1.05); /* Agranda la imagen un 5% */
 }
 
 .etiqueta {
