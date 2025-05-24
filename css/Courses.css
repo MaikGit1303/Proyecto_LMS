@@ -21,7 +21,6 @@ body {
     min-height: 60px; /* Altura mínima para el header */
     box-sizing: border-box; /* Incluye padding en la altura */
     width: 100%;
-    /* Nuevo: Usamos gap para separar el título del nav-contenedor */
     gap: 30px; /* Espacio entre "LMS Portal" y el resto del header */
 }
 
@@ -30,7 +29,6 @@ body {
     font-size: 1.3em;
     font-weight: 700;
     flex-shrink: 0;
-    /* Eliminamos padding-right de h1 ya que el gap en .encabezado lo maneja */
     padding-right: 0;
 }
 
@@ -43,9 +41,8 @@ body {
     gap: 30px; /* Aumentamos el espacio entre el menú y los controles */
 }
 
-/* Para alinear el menú a la izquierda y los controles a la derecha dentro de nav-contenedor */
 .nav-contenedor nav {
-    flex-shrink: 0; /* Aseguramos que el menú no se encoja */
+    flex-shrink: 0;
 }
 
 .nav-menu {
@@ -63,24 +60,24 @@ body {
     padding: 8px 15px;
     border-radius: 4px;
     transition: background-color 0.3s ease, border-bottom 0.3s ease;
-    white-space: nowrap; /* Evita que el texto de los ítems del menú se rompa en varias líneas */
+    white-space: nowrap;
 }
 
 .nav-menu li a.activo {
-    background-color: #3a4b5d; /* Fondo para el elemento activo */
+    background-color: #3a4b5d;
     border-bottom: none;
 }
 
 .nav-menu li a:hover {
-    background-color: #3a4b5d; /* Fondo al pasar el mouse */
+    background-color: #3a4b5d;
     border-bottom: none;
 }
 
 .controles {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espacio entre los controles (botón de luna, idioma, perfil) */
-    flex-shrink: 0; /* Evita que los controles se encojan */
+    gap: 15px;
+    flex-shrink: 0;
 }
 
 .controles button {
@@ -94,11 +91,11 @@ body {
 .controles label {
     color: white;
     font-size: 0.95em;
-    font-weight: 600; /* Para "Language:" */
+    font-weight: 600;
 }
 
 .controles select {
-    background-color: #3a4b5d; /* Fondo un poco más claro para el select */
+    background-color: #3a4b5d;
     color: white;
     border: 1px solid #4a5b6d;
     border-radius: 4px;
@@ -109,32 +106,30 @@ body {
 
 .controles .foto-label {
     cursor: pointer;
-    display: flex; /* Para alinear la imagen y el texto (si hubiera) */
+    display: flex;
     align-items: center;
-    gap: 8px; /* Espacio entre la foto y el nombre */
+    gap: 8px;
 }
 
 .controles .foto-preview {
     width: 35px;
     height: 35px;
-    border-radius: 50%; /* Hacerla circular */
-    object-fit: cover; /* Asegurar que la imagen cubra bien */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Borde sutil */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* Estilo del nombre de usuario en el header */
 .controles .nombre-usuario {
     color: white;
     font-weight: 600;
     font-size: 0.95em;
-    display: flex; /* Para alinear el nombre y la flecha (si se añade) */
+    display: flex;
     align-items: center;
-    gap: 5px; /* Espacio entre el nombre y la flecha */
+    gap: 5px;
 }
 
-/* Si quieres añadir una flecha con CSS para el John Doe */
 .controles .nombre-usuario::after {
-    content: '\25BC'; /* Carácter de flecha hacia abajo */
+    content: '\25BC'; /* Esto es un triángulo hacia abajo */
     font-size: 0.7em;
     margin-left: 3px;
     vertical-align: middle;
@@ -144,37 +139,37 @@ body {
 /* Estilos para la página de Cursos */
 
 main {
-    max-width: 1200px; /* Ancho máximo del contenido principal */
-    margin: 20px auto; /* Centrar el contenido y margen superior/inferior */
-    background-color: white; /* Fondo blanco para el área de contenido */
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    padding: 30px; /* Padding interior del contenedor principal */
+    padding: 30px;
 }
 
 .titulo-principal {
-    font-size: 2em;
+    font-size: 2.5em; /* Tamaño de fuente para "Available Courses" - más grande y oscuro */
     margin: 0 0 20px 0;
-    font-weight: 600;
-    color: #333;
+    font-weight: 700; /* Más negrita/oscuro */
+    color: #2c3e50; /* Color más oscuro para el título principal */
     text-align: left;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
-    padding-left: 20px; /* Este valor debe coincidir con el padding-left de .categoria-curso */
+    padding-left: 20px;
 }
 
 .categoria-curso {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    padding-left: 20px; /* Esto empujará el h3 y la hr a la derecha */
+    padding-left: 20px;
 }
 
 .categoria-curso h3 {
-    font-size: 1.6em;
-    font-weight: 600;
+    font-size: 1.8em; /* Tamaño de fuente para los títulos de categoría - un poco más pequeño que el principal */
+    font-weight: 600; /* Ligera negrita */
     margin-bottom: 5px;
-    color: #555;
+    color: #4a5a6a; /* Color un poco más claro que el título principal */
     border-bottom: none;
     padding-bottom: 0;
     width: auto;
@@ -188,8 +183,8 @@ main {
     border: 0;
     height: 2px;
     background-color: #3a8dde;
-    width: 100%; /* Ocupa el 100% del contenedor padre (.categoria-curso) */
-    max-width: 1090px; /* Esto asegura que no se extienda más allá del ancho de 3 tarjetas + gaps */
+    width: 100%;
+    max-width: 1090px;
     margin-left: 0;
     margin-right: auto;
     margin-top: 5px;
@@ -200,47 +195,104 @@ main {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    justify-content: flex-start; /* Alineamos las tarjetas al inicio */
+    justify-content: flex-start;
     margin-left: 0;
-    margin-right: 0; /* Asegurarse de que no tenga margen derecho */
+    margin-right: 0;
     padding-bottom: 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    width: calc(100% - 20px); /* Ajustamos el ancho para compensar el padding-left del .categoria-curso */
-    max-width: 1090px; /* Limita el ancho del grupo de tarjetas */
+    width: calc(100% - 20px); /* Ajuste para el padding, si aplica */
+    max-width: 1090px;
 }
 
 .tarjetas-curso::-webkit-scrollbar {
     display: none;
 }
 
+/* --- Estilos para el efecto de giro de la tarjeta --- */
+
 .tarjeta {
-    background-color: white;
-    border-radius: 15px; /* Más redondeado */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* El fondo de la tarjeta principal ahora es transparente */
     width: 350px;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    font-family: 'Open Sans', sans-serif;
-    transition: transform 0.2s ease-in-out; /* Transición para el translateY */
+    min-height: 440px; /* Incrementado de 400px a 440px para hacerla un poco más larga */
+    perspective: 1000px; /* Para el efecto 3D de la rotación */
+    border-radius: 15px; /* Bordes redondeados para la tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para la tarjeta */
+    transition: transform 0.2s ease-in-out; /* Para el pequeño translateY en hover */
 }
 
 .tarjeta:hover {
     transform: translateY(-5px);
 }
 
+.tarjeta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s; /* Velocidad de la animación de giro */
+    transform-style: preserve-3d; /* Permite que los elementos hijos se posicionen en 3D */
+    border-radius: 15px; /* Para que el inner también tenga bordes redondeados */
+}
+
+/* Clase para activar el giro */
+.tarjeta-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.tarjeta-frente, .tarjeta-reverso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Oculta la parte trasera cuando no está girada (para WebKit) */
+    backface-visibility: hidden; /* Oculta la parte trasera cuando no está girada */
+    border-radius: 15px;
+    background-color: white; /* Fondo para el frente y reverso */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Para que los botones se queden abajo */
+    padding-bottom: 18px; /* Padding extra para el contenido, si es necesario */
+    box-sizing: border-box; /* Asegura que padding no aumente el tamaño total */
+}
+
+.tarjeta-reverso {
+    transform: rotateY(180deg); /* El reverso comienza rotado para que se muestre al girar */
+    background-color: #f8f9fa; /* Un color de fondo ligeramente diferente para el reverso */
+    padding: 18px; /* Padding para el contenido del reverso */
+    text-align: left; /* Alineación del texto para el reverso */
+}
+
+.tarjeta-reverso h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 700; /* Negrita para los títulos de info */
+    color: #333;
+    font-size: 1.15em; /* Ajusta si es necesario */
+}
+
+.tarjeta-reverso p {
+    font-size: 0.95em;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.info-curso {
+    flex-grow: 1; /* Permite que el contenido del reverso ocupe espacio */
+    overflow-y: auto; /* Si el contenido es muy largo, permite scroll */
+    padding-right: 5px; /* Para evitar que el scrollbar se pegue al texto */
+}
+
+/* Estilos de la imagen y etiquetas existentes (sin cambios significativos) */
 .imagen-curso {
     position: relative;
     height: 180px;
     width: 100%;
     overflow: hidden;
     background-color: #ddd;
-    border-top-left-radius: 15px; /* Coincide con el radio de la tarjeta */
-    border-top-right-radius: 15px; /* Coincide con el radio de la tarjeta */
-    /* Añadimos un efecto de sombra interna para el efecto "negrito" */
-    box-shadow: inset 0px 10px 15px -5px rgba(0,0,0,0.3); /* Sombra interna sutil */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: inset 0px 10px 15px -5px rgba(0,0,0,0.3);
 }
 
 .imagen-curso img {
@@ -248,13 +300,11 @@ main {
     height: 100%;
     object-fit: cover;
     display: block;
-    /* Agregamos una transición para el efecto de zoom */
     transition: transform 0.3s ease-in-out;
 }
 
-/* Nueva regla: cuando el mouse esté sobre la tarjeta, la imagen dentro de imagen-curso se agranda */
 .tarjeta:hover .imagen-curso img {
-    transform: scale(1.05); /* Agranda la imagen un 5% */
+    transform: scale(1.05);
 }
 
 .etiqueta {
@@ -277,14 +327,14 @@ main {
     right: 10px;
 }
 
-.tarjeta h4 {
+.tarjeta-frente h4 { /* Apuntar específicamente al h4 del frente */
     margin: 18px 18px 12px 18px;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.2em; /* Mantener este tamaño, ya que los de categoría son 1.8em */
     color: #333;
 }
 
-.tarjeta p {
+.tarjeta-frente p { /* Apuntar específicamente al p del frente */
     margin: 0 18px 18px 18px;
     font-size: 1em;
     color: #666;
@@ -296,13 +346,13 @@ main {
     display: flex;
     gap: 10px;
     margin: 0 18px 18px 18px;
-    margin-top: auto;
+    margin-top: auto; /* Empuja los botones hacia abajo */
 }
 
 .btn {
     flex: 1;
     padding: 12px 0;
-    border-radius: 20px; /* Aumentamos el radio para hacerlo más redondeado */
+    border-radius: 20px;
     font-weight: 600;
     font-size: 0.95em;
     cursor: pointer;
@@ -324,16 +374,28 @@ main {
 }
 
 .info {
-    background-color: transparent; /* Fondo transparente o blanco */
-    color: #007bff; /* Color de texto azul (igual que el de "Enroll Now") */
-    border-color: #007bff; /* Color de borde azul */
+    background-color: transparent;
+    color: #007bff;
+    border-color: #007bff;
 }
 
 .info:hover {
-    background-color: #e9ecef; /* Un fondo ligeramente gris claro al pasar el mouse */
-    color: #0056b3; /* Color de texto azul oscuro al pasar el mouse */
-    border-color: #0056b3; /* Borde azul oscuro al pasar el mouse */
+    background-color: #e9ecef;
+    color: #0056b3;
+    border-color: #0056b3;
 }
+
+.cerrar-info {
+    background-color: #dc3545; /* Rojo para el botón de cerrar */
+    color: white;
+    border-color: #dc3545;
+}
+
+.cerrar-info:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
 
 /* Media Queries para Responsividad */
 @media (max-width: 1200px) {
@@ -341,12 +403,11 @@ main {
         width: 300px;
     }
     .categoria-curso hr {
-        max-width: 940px; /* (3*300px) + (2*20px) = 940px */
+        max-width: 940px;
     }
     .tarjetas-curso {
         max-width: 940px;
     }
-    /* Mantenemos el padding-left para el título principal y las categorías */
     .titulo-principal, .categoria-curso {
         padding-left: 20px;
     }
@@ -385,7 +446,7 @@ main {
         padding: 20px;
     }
     .titulo-principal {
-        font-size: 1.8em;
+        font-size: 2em;
     }
     .categoria-curso h3 {
         font-size: 1.4em;
@@ -394,19 +455,18 @@ main {
         width: 320px;
     }
     .categoria-curso hr {
-        max-width: 660px; /* (2*320px) + (1*20px) = 660px */
+        max-width: 660px;
     }
     .tarjetas-curso {
         max-width: 660px;
     }
-    /* Ajustamos el padding-left para pantallas más pequeñas */
     .titulo-principal, .categoria-curso {
         padding-left: 15px;
     }
-    .tarjeta h4 {
+    .tarjeta-frente h4 {
         font-size: 1.15em;
     }
-    .tarjeta p {
+    .tarjeta-frente p {
         font-size: 0.95em;
     }
     .btn {
@@ -416,7 +476,7 @@ main {
 
 @media (max-width: 768px) {
     .titulo-principal {
-        font-size: 1.6em;
+        font-size: 1.8em;
     }
     .categoria-curso h3 {
         font-size: 1.2em;
@@ -439,7 +499,6 @@ main {
         width: 90%;
         max-width: 320px;
     }
-    /* Ajustamos el padding-left para el contenedor de la categoría */
     .titulo-principal, .categoria-curso {
         padding-left: 15px;
     }
@@ -460,13 +519,12 @@ main {
         display: none;
     }
     .titulo-principal {
-        font-size: 1.4em;
+        font-size: 1.6em;
         margin-bottom: 15px;
     }
     main {
         padding: 15px;
     }
-    /* Ajuste final para móviles */
     .titulo-principal, .categoria-curso {
         padding-left: 10px;
     }

@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Assignments - LMS Portal</title>
-<link rel="stylesheet" href="../CSS/srtyle.css" />
-<link rel="stylesheet" href="../CSS/Assignments.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Portal - Assignments</title>
+    <link rel="stylesheet" href="../css/Courses.css">
+    </head>
 <body>
-<header class="encabezado">
-    <h1>LMS Portal</h1>
-    <nav class="nav-contenedor">
-        <ul class="nav-menu">
-            <li><a href="../index.html">Dashboard</a></li>
-            <li><a href="Courses.html">Courses</a></li>
-            <li><a href="Assignments.html">Assignments</a></li>
-            <li><a href="Progress.html">Progress</a></li>
-            <li><a href="Profile.html">Profile</a></li>
-        </ul>
-        <div class="controles">
-            <button id="CambioDeModo" aria-label="Cambiar modo oscuro">🌙</button>
-            <label for="pais">Idioma:</label>
-            <select name="pais" id="pais">
-                <option value="english">English</option>
-                <option value="español">Español</option>
-                <option value="français">Français</option>
-                <option value="deutsch">Deutsch</option>
-            </select>
-            <label for="fotoPerfil" class="foto-label">
-                <input type="file" accept="image/*" id="fotoPerfil" name="fotoPerfil" hidden />
-                <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="Foto de perfil" class="foto-preview" />
-            </label>
+
+    <header class="encabezado">
+        <h1>LMS Portal</h1>
+        <div class="nav-contenedor">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" >Dashboard</a></li>
+                    <li><a href="../HTML/Courses.html" >Courses</a></li>
+                    <li><a href="../HTML/Assignments.html">Assignments</a></li>
+                    <li><a href="../HTML/Progress.html">Progress</a></li>
+                    <li><a href="../HTML/Profile.html">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="controles">
+                <button aria-label="Toggle dark mode">🌙</button> <label for="language-select"></label>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                </select>
+                <div class="foto-label">
+                    <img src="../IMG/Courses/Perfil.jpeg" alt="User Photo" class="foto-preview">
+                    <span class="nombre-usuario">John Doe</span>
+                </div>
+            </div>
         </div>
-    </nav>
-</header>
+    </header>
 
 <!-- Main content placeholder -->
 <main>

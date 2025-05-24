@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS Portal - Courses</title>
     <link rel="stylesheet" href="../css/Courses.css">
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 <body>
 
     <header class="encabezado">
@@ -14,14 +15,15 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="../index.html" >Dashboard</a></li>
-                    <li><a href="../HTML/Courses.html" >Courses</a></li>
+                    <li><a href="../HTML/Courses.html" class="activo">Courses</a></li>
                     <li><a href="../HTML/Assignments.html">Assignments</a></li>
                     <li><a href="../HTML/Progress.html">Progress</a></li>
                     <li><a href="../HTML/Profile.html">Profile</a></li>
                 </ul>
             </nav>
             <div class="controles">
-                <button aria-label="Toggle dark mode">🌙</button> <label for="language-select"></label>
+                <button id="CambioDeModo" aria-label="Cambiar modo oscuro">🌙</button>
+                <label for="language-select"></label>
                 <select id="language-select">
                     <option value="en">English</option>
                     <option value="es">Español</option>
@@ -43,44 +45,101 @@
             <hr>
             <div class="tarjetas-curso">
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses1.jpg" alt="Unity Game Development">
-                        <span class="etiqueta nivel">Intermediate</span>
-                        <span class="etiqueta duracion">12 weeks</span>
-                    </div>
-                    <h4>Unity Game Development</h4>
-                    <p>Create immersive 3D games with Unity. Learn C# programming, game physics, and professional game development.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses1.jpg" alt="Unity Game Development">
+                                <span class="etiqueta nivel">Intermediate</span>
+                                <span class="etiqueta duracion">12 weeks</span>
+                            </div>
+                            <h4>Unity Game Development</h4>
+                            <p>Create immersive 3D games with Unity. Learn C# programming, game physics, and professional game development.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="unity-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="unity-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Basic programming knowledge in any language. Understanding of 3D geometry is helpful but not required.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Build complete 3D games, master C# programming, implement game physics, create engaging UI systems, and optimize game performance.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Interactive lessons, hands-on projects, quizzes, and a final capstone project. Includes expert-led tutorials, peer collaboration, and access to a vibrant developer community.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses2.jpeg" alt="Unreal Engine Basics">
-                        <span class="etiqueta nivel">Beginner</span>
-                        <span class="etiqueta duracion">8 weeks</span>
-                    </div>
-                    <h4>Unreal Engine Basics</h4>
-                    <p>Master the fundamentals of Unreal Engine 5. Cover Blueprint visual scripting, level design, and game mechanics.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses2.jpeg" alt="Unreal Engine Basics">
+                                <span class="etiqueta nivel">Beginner</span>
+                                <span class="etiqueta duracion">8 weeks</span>
+                            </div>
+                            <h4>Unreal Engine Basics</h4>
+                            <p>Master the fundamentals of Unreal Engine 5. Cover Blueprint visual scripting, level design, and game mechanics.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="unreal-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="unreal-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>No prior game development experience needed. Basic computer literacy required.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Navigate the Unreal Engine interface, create basic game levels, implement game logic with Blueprints, and package your first game.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Video lectures, interactive exercises, small projects, and a guided final project to build a simple game.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses3.jpeg" alt="Game Design Principles">
-                        <span class="etiqueta nivel">All Levels</span>
-                        <span class="etiqueta duracion">10 weeks</span>
-                    </div>
-                    <h4>Game Design Principles</h4>
-                    <p>Learn essential game design concepts including mechanics, dynamics, aesthetics, and player psychology.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses3.jpeg" alt="Game Design Principles">
+                                <span class="etiqueta nivel">All Levels</span>
+                                <span class="etiqueta duracion">10 weeks</span>
+                            </div>
+                            <h4>Game Design Principles</h4>
+                            <p>Learn essential game design concepts including mechanics, dynamics, aesthetics, and player psychology.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="gamedesign-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="gamedesign-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>No technical skills required, just a passion for games and critical thinking.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Understand core loops, balance gameplay, create compelling narratives, and design for player engagement and retention.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Case studies of popular games, design challenges, group discussions, and pitching your own game concepts.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -91,44 +150,101 @@
             <hr>
             <div class="tarjetas-curso">
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses4.jpg" alt="Node.js Development">
-                        <span class="etiqueta nivel">Advanced</span>
-                        <span class="etiqueta duracion">14 weeks</span>
-                    </div>
-                    <h4>Node.js Development</h4>
-                    <p>Build high-performance backend services with Node.js. Cover Express.js, MongoDB, and microservices.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses4.jpg" alt="Node.js Development">
+                                <span class="etiqueta nivel">Advanced</span>
+                                <span class="etiqueta duracion">14 weeks</span>
+                            </div>
+                            <h4>Node.js Development</h4>
+                            <p>Build high-performance backend services with Node.js. Cover Express.js, MongoDB, and microservices.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="nodejs-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="nodejs-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Solid understanding of JavaScript. Familiarity with command line tools is a plus.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Develop RESTful APIs, integrate with databases like MongoDB, implement authentication and authorization, and deploy Node.js applications.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Module-based lessons, coding exercises, mini-projects, and a final full-stack application development project.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses5.jpg" alt="Database Design">
-                        <span class="etiqueta nivel">Intermediate</span>
-                        <span class="etiqueta duracion">10 weeks</span>
-                    </div>
-                    <h4>Database Design</h4>
-                    <p>Comprehensive guide to database design. Learn SQL, NoSQL, data modeling, and performance optimization.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses5.jpg" alt="Database Design">
+                                <span class="etiqueta nivel">Intermediate</span>
+                                <span class="etiqueta duracion">10 weeks</span>
+                            </div>
+                            <h4>Database Design</h4>
+                            <p>Comprehensive guide to database design. Learn SQL, NoSQL, data modeling, and performance optimization.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="database-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="database-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Basic understanding of data concepts. No prior database experience required.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Design relational and non-relational databases, write complex SQL queries, optimize database performance, and understand database security principles.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Theoretical lectures, practical exercises with various database systems, case studies, and a final database design project.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses6.jpg" alt="API Development">
-                        <span class="etiqueta nivel">Intermediate</span>
-                        <span class="etiqueta duracion">8 weeks</span>
-                    </div>
-                    <h4>API Development</h4>
-                    <p>Create robust APIs using REST and GraphQL. Focus on security, documentation, and best practices.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses6.jpg" alt="API Development">
+                                <span class="etiqueta nivel">Intermediate</span>
+                                <span class="etiqueta duracion">8 weeks</span>
+                            </div>
+                            <h4>API Development</h4>
+                            <p>Create robust APIs using REST and GraphQL. Focus on security, documentation, and best practices.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="api-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="api-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Familiarity with a programming language (e.g., Python, JavaScript) and web concepts (HTTP).</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Design and implement RESTful APIs, work with GraphQL, handle data serialization, implement authentication and authorization, and document APIs effectively.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Hands-on coding labs, discussions on API design patterns, and a final project to build a complete API.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,44 +255,101 @@
             <hr>
             <div class="tarjetas-curso">
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses7.jpg" alt="React Development">
-                        <span class="etiqueta nivel">Advanced</span>
-                        <span class="etiqueta duracion">12 weeks</span>
-                    </div>
-                    <h4>React Development</h4>
-                    <p>Master modern frontend with React.js. Build dynamic and responsive user interfaces.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses7.jpg" alt="React Development">
+                                <span class="etiqueta nivel">Advanced</span>
+                                <span class="etiqueta duracion">12 weeks</span>
+                            </div>
+                            <h4>React Development</h4>
+                            <p>Master modern frontend with React.js. Build dynamic and responsive user interfaces.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="react-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="react-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Strong grasp of HTML, CSS, and JavaScript fundamentals.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Build reusable components, manage state with hooks and context, integrate with APIs, and optimize React application performance.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Project-based learning, coding challenges, peer code reviews, and building a portfolio-ready React application.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses8.jpeg" alt="Vue.js Fundamentals">
-                        <span class="etiqueta nivel">Advanced</span>
-                        <span class="etiqueta duracion">14 weeks</span>
-                    </div>
-                    <h4>Vue.js Fundamentals</h4>
-                    <p>Learn the essentials of Vue.js for building interactive web applications. Explore components and reactivity.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses8.jpeg" alt="Vue.js Fundamentals">
+                                <span class="etiqueta nivel">Advanced</span>
+                                <span class="etiqueta duracion">14 weeks</span>
+                            </div>
+                            <h4>Vue.js Fundamentals</h4>
+                            <p>Learn the essentials of Vue.js for building interactive web applications. Explore components and reactivity.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="vuejs-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="vuejs-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Good understanding of HTML, CSS, and JavaScript. Prior experience with other frameworks is beneficial but not mandatory.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Core concepts of Vue instances and components, data binding, event handling, routing with Vue Router, and state management with Vuex.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Interactive lessons, practical coding exercises, small projects, and a final project to build a single-page application with Vue.js.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses9.jpeg" alt="CSS Animations">
-                        <span class="etiqueta nivel">Intermediate</span>
-                        <span class="etiqueta duracion">6 weeks</span>
-                    </div>
-                    <h4>CSS Animations</h4>
-                    <p>Add engaging animations to your websites with advanced CSS techniques and transitions.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses9.jpeg" alt="CSS Animations">
+                                <span class="etiqueta nivel">Intermediate</span>
+                                <span class="etiqueta duracion">6 weeks</span>
+                            </div>
+                            <h4>CSS Animations</h4>
+                            <p>Add engaging animations to your websites with advanced CSS techniques and transitions.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="cssanimations-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="cssanimations-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Solid grasp of HTML and CSS fundamentals.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Create complex animations and transitions, understand keyframes, use advanced animation properties, and build responsive animations for different devices.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Hands-on coding exercises, exploration of various animation effects, and a final project to animate a web page element from scratch.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,49 +360,107 @@
             <hr>
             <div class="tarjetas-curso">
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses10.jpeg" alt="Mathematics 101">
-                        <span class="etiqueta nivel">Beginner</span>
-                        <span class="etiqueta duracion">16 weeks</span>
-                    </div>
-                    <h4>Mathematics 101</h4>
-                    <p>Introduction to core mathematical concepts including algebra, calculus, and probability theory.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses10.jpeg" alt="Mathematics 101">
+                                <span class="etiqueta nivel">Beginner</span>
+                                <span class="etiqueta duracion">16 weeks</span>
+                            </div>
+                            <h4>Mathematics 101</h4>
+                            <p>Introduction to core mathematical concepts including algebra, calculus, and probability theory.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="math101-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="math101-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Basic arithmetic skills. No advanced mathematical background required.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Fundamentals of algebra, introduction to differential and integral calculus, and basic principles of probability and statistics.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Weekly lectures, problem sets, online quizzes, and a comprehensive final exam.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses11.jpg" alt="Physics Basics">
-                        <span class="etiqueta nivel">Beginner</span>
-                        <span class="etiqueta duracion">16 weeks</span>
-                    </div>
-                    <h4>Physics Basics</h4>
-                    <p>Explore fundamental physics principles including mechanics, thermodynamics, and wave theory.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses11.jpg" alt="Physics Basics">
+                                <span class="etiqueta nivel">Beginner</span>
+                                <span class="etiqueta duracion">16 weeks</span>
+                            </div>
+                            <h4>Physics Basics</h4>
+                            <p>Explore fundamental physics principles including mechanics, thermodynamics, and wave theory.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="physics-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="physics-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>Basic algebra and trigonometry. No prior physics knowledge needed.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Newton's laws of motion, energy conservation, basic concepts of heat and temperature, and properties of waves.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Lectures, lab simulations, problem-solving sessions, and mid-term/final examinations.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="tarjeta">
-                    <div class="imagen-curso">
-                        <img src="../IMG/Courses/Courses12.jpeg" alt="Chemistry Essentials">
-                        <span class="etiqueta nivel">Beginner</span>
-                        <span class="etiqueta duracion">16 weeks</span>
-                    </div>
-                    <h4>Chemistry Essentials</h4>
-                    <p>Learn core chemistry concepts including atomic structure, chemical bonding, and reactions.</p>
-                    <div class="botones">
-                        <button class="btn inscribirse">Enroll Now</button>
-                        <button class="btn info">More Info</button>
+                    <div class="tarjeta-inner">
+                        <div class="tarjeta-frente">
+                            <div class="imagen-curso">
+                                <img src="../IMG/Courses/Courses12.jpeg" alt="Chemistry Essentials">
+                                <span class="etiqueta nivel">Beginner</span>
+                                <span class="etiqueta duracion">16 weeks</span>
+                            </div>
+                            <h4>Chemistry Essentials</h4>
+                            <p>Learn core chemistry concepts including atomic structure, chemical bonding, and reactions.</p>
+                            <div class="botones">
+                                <button class="btn inscribirse">Enroll Now</button>
+                                <button class="btn info" data-target="chemistry-back">More Info</button>
+                            </div>
+                        </div>
+                        <div class="tarjeta-reverso" id="chemistry-back">
+                            <div class="info-curso">
+                                <h4>Prerequisites</h4>
+                                <p>No specific prerequisites. Basic understanding of science concepts is helpful.</p>
+
+                                <h4>What You'll Learn</h4>
+                                <p>Elements and compounds, types of chemical bonds, stoichiometry, acid-base reactions, and an introduction to organic chemistry.</p>
+
+                                <h4>Course Structure</h4>
+                                <p>Online lectures, virtual lab experiments, quizzes, and a final practical assessment.</p>
+                            </div>
+                            <div class="botones">
+                                <button class="btn cerrar-info">Close</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    </body>
+    <script src="../js/Courses.js"></script>
+</body>
 </html>
