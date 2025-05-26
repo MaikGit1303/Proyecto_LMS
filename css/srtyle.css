@@ -370,6 +370,14 @@ body {
     font-weight: 700;
 }
 
+/* Nuevo estilo para el contenedor de la lista de actividad como una tarjeta grande */
+.activity-list-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Similar al de activity-item */
+    padding: 20px 28px; /* Ajusta el padding según necesites, o remueve si activity-list ya tiene suficiente */
+}
+
 .activity-list {
     display: flex;
     flex-direction: column;
@@ -377,26 +385,56 @@ body {
 }
 
 .activity-item {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px 28px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /* Quitamos el background y box-shadow de aquí para que solo lo tenga el contenedor principal */
+    /* background-color: #fff; */
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+    border-radius: 10px; /* Mantener los bordes redondeados para cada item */
+    padding: 0; /* Ya el padre tiene padding, los items no lo necesitan */
     display: flex;
     align-items: center;
     gap: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease; /* Mantener la transición de movimiento */
 }
 
 .activity-item:hover {
     transform: translateX(8px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); No es necesario si el padre ya tiene la sombra */
 }
 
-.activity-icon {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
+/* Estilos para el contenedor del icono circular */
+.activity-icon-wrapper {
+    width: 45px; /* Tamaño del círculo */
+    height: 45px; /* Tamaño del círculo */
+    border-radius: 50%; /* Hacerlo circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-shrink: 0;
+    box-sizing: border-box; /* Asegura que el padding/border no aumenten el tamaño */
+    border: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+}
+
+/* Clases para los colores específicos del borde y el fondo */
+.activity-icon-blue-border {
+    border-color: #a8dadc; /* Un azul claro verdoso para el borde */
+    background-color: #e0f2f7; /* Un fondo azul muy claro */
+}
+
+.activity-icon-orange-border {
+    border-color: #ffd6a5; /* Un naranja claro para el borde */
+    background-color: #fff3e0; /* Un fondo naranja muy claro */
+}
+
+.activity-icon-gold-border {
+    border-color: #f7d287; /* Un dorado claro para el borde */
+    background-color: #fff9e0; /* Un fondo dorado muy claro */
+}
+
+/* Estilo para los emojis dentro del círculo */
+.activity-emoji {
+    font-size: 22px; /* Ajusta el tamaño del emoji para que quepa bien */
+    line-height: 1; /* Asegura que el emoji esté bien centrado verticalmente */
 }
 
 .activity-details p {
@@ -458,6 +496,9 @@ body {
     .recent-activity-section h2 {
         font-size: 1.8em;
     }
+    .activity-list-container {
+        padding: 15px 20px; /* Ajustar padding para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 768px) {
@@ -502,12 +543,15 @@ body {
         padding: 10px 15px;
     }
     .activity-item {
-        padding: 15px 20px;
+        padding: 0; /* Mantenemos el padding en el padre */
         gap: 15px;
     }
-    .activity-icon {
-        width: 35px;
-        height: 35px;
+    .activity-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+    .activity-emoji {
+        font-size: 20px;
     }
     .activity-details p {
         font-size: 0.95em;
