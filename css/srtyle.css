@@ -287,7 +287,7 @@ body {
 /* Nuevo estilo para la barra de progreso dentro de la tarjeta */
 .course-progress-bar {
     height: 5px;
-    background-color: #e0e0e0;
+    background-color: #28a745; /* Cambiado de gris a verde */
 }
 
 .course-content {
@@ -333,7 +333,7 @@ body {
 }
 
 .completion-percentage.red {
-    color: #dc3545;
+    color: #28a745; /* Cambiado de rojo a verde */
 }
 
 .lessons-count {
@@ -389,7 +389,8 @@ body {
     /* background-color: #fff; */
     /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
     border-radius: 10px; /* Mantener los bordes redondeados para cada item */
-    padding: 0; /* Ya el padre tiene padding, los items no lo necesitan */
+    padding: 15px 20px;
+    background-color: rgba(0, 0, 0, 0.05); /* Gris transparente */
     display: flex;
     align-items: center;
     gap: 20px;
