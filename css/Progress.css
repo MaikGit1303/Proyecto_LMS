@@ -1,7 +1,230 @@
-.encabezado h1 {
-  font-size: 1.2rem;
+/* Estilos para la página Progress */
+
+.dashboard-main-content {
+    padding: 30px 80px;
+    background-color: #f4f7fa;
+    min-height: calc(100vh - 90px);
+    box-sizing: border-box;
 }
 
-.nav-menu li a {
-  font-size: 1rem;
+.dashboard-title {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.progress-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.progress-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.progress-card h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #222;
+    margin: 0;
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 8px 0 0 8px;
+    transition: width 0.4s ease;
+}
+
+.progress-text {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.view-topics-link {
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-topics-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard-main-content {
+        padding: 20px 20px;
+    }
+    .dashboard-title {
+        font-size: 2em;
+    }
+    .progress-categories {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos para el modal de temas */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    position: relative;
+    padding: 20px 30px 30px 30px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background-color: #ddd;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background-color: #bbb;
+}
+
+.modal-header {
+    position: relative;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.4);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #222;
+}
+
+.modal-progress-bar-container {
+    width: 100%;
+    height: 14px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.modal-progress-bar {
+    height: 100%;
+    background-color: #28a745; /* Verde para progreso */
+    border-radius: 8px 0 0 8px;
+    transition: width 0.4s ease;
+}
+
+.modal-progress-text {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 2px;
+}
+
+.modal-topics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.topic-item {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.topic-item:last-child {
+    border-bottom: none;
+}
+
+.topic-title {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 5px 0;
+}
+
+.topic-description {
+    font-size: 0.95em;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.topic-progress-bar-container {
+    width: 100%;
+    height: 12px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.topic-progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    border-radius: 8px 0 0 8px;
+    transition: width 0.4s ease;
+}
+
+.topic-progress-text {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 5px;
+    text-align: right;
 }

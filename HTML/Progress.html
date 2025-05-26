@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS Portal - Courses</title>
     <link rel="stylesheet" href="../css/Courses.css">
+    <link rel="stylesheet" href="../css/Progress.css">
     </head>
 <body>
 
@@ -36,10 +37,60 @@
     </header>
 
 <!-- Main content placeholder -->
-<main>
-    <h2 class="Subtitle">Progress</h2>
-    <!-- Existing content should be here -->
+<main class="dashboard-main-content">
+    <h2 class="dashboard-title">Learning Progress</h2>
+    <section class="progress-categories">
+        <div class="progress-card">
+            <h3>Web Development</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 80%;"></div>
+            </div>
+            <p class="progress-text">80% Complete</p>
+            <a href="#" class="view-topics-link">Click to view topics →</a>
+        </div>
+        <div class="progress-card">
+            <h3>Data Science</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 60%;"></div>
+            </div>
+            <p class="progress-text">60% Complete</p>
+            <a href="#" class="view-topics-link">Click to view topics →</a>
+        </div>
+        <div class="progress-card">
+            <h3>Mobile Development</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 45%;"></div>
+            </div>
+            <p class="progress-text">45% Complete</p>
+            <a href="#" class="view-topics-link">Click to view topics →</a>
+        </div>
+        <div class="progress-card">
+            <h3>Cloud Computing</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 30%;"></div>
+            </div>
+            <p class="progress-text">30% Complete</p>
+            <a href="#" class="view-topics-link">Click to view topics →</a>
+        </div>
+    </section>
 </main>
+
+<!-- Modal para mostrar detalles de temas -->
+<div id="topics-modal" class="modal hidden">
+    <div class="modal-content">
+        <button id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">&times;</button>
+        <div id="modal-header" class="modal-header">
+            <h3 id="modal-category-title"></h3>
+            <div class="modal-progress-bar-container">
+                <div id="modal-progress-bar" class="modal-progress-bar"></div>
+            </div>
+            <p id="modal-progress-text"></p>
+        </div>
+        <div id="modal-topics-list" class="modal-topics-list">
+            <!-- Temas se insertarán dinámicamente aquí -->
+        </div>
+    </div>
+</div>
 
 <script src="../JS/Progress.js"></script>
 </body>
