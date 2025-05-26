@@ -1,26 +1,137 @@
 [
-    {
-        "imagen": "https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg",
-        "titulo": "Curso de HTML Básico",
-        "profesor": "Ana Gómez",
-        "progreso": 75,
-        "leccionesCompletadas": 15,
-        "totalLecciones": 20
+  {
+    "codigo": "CURSO001",
+    "nivel": "Básico",
+    "duracion": "4 semanas",
+    "titulo": "Curso de HTML Básico",
+    "categoria": "Desarrollo Web",
+    "descripcion": "Aprende los fundamentos de HTML para crear páginas web.",
+    "prerequisitos": "Ninguno",
+    "resultados": [
+      "Entender la estructura básica de una página web",
+      "Crear páginas web simples con HTML"
+    ],
+    "estructuraCurso": [
+      {
+        "nombreModulo": "Introducción a HTML",
+        "temas": [
+          "Etiquetas básicas",
+          "Estructura de un documento HTML",
+          "Elementos comunes"
+        ]
+      },
+      {
+        "nombreModulo": "HTML Avanzado",
+        "temas": [
+          "Formularios",
+          "Multimedia",
+          "Tablas"
+        ]
+      }
+    ],
+    "experto": {
+      "id": "EXP001",
+      "nombreCompleto": "Ana Gómez",
+      "email": "ana.gomez@example.com",
+      "nacionalidad": "Mexicana",
+      "biografia": "Experta en desarrollo web con 10 años de experiencia."
     },
-    {
-        "imagen": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg",
-        "titulo": "Curso de CSS Intermedio",
-        "profesor": "Juan Pérez",
-        "progreso": 40,
-        "leccionesCompletadas": 8,
-        "totalLecciones": 20
+    "precio": 50,
+    "garantia": [
+      "Lifetime access",
+      "Certificate of completion",
+      "30-day money-back guarantee",
+      "Direct instructor support"
+    ]
+  },
+  {
+    "codigo": "CURSO002",
+    "nivel": "Intermedio",
+    "duracion": "6 semanas",
+    "titulo": "Curso de CSS Intermedio",
+    "categoria": "Desarrollo Web",
+    "descripcion": "Profundiza en el diseño y estilos con CSS.",
+    "prerequisitos": "Conocimientos básicos de HTML",
+    "resultados": [
+      "Diseñar páginas web responsivas",
+      "Aplicar estilos avanzados con CSS"
+    ],
+    "estructuraCurso": [
+      {
+        "nombreModulo": "Fundamentos de CSS",
+        "temas": [
+          "Selectores",
+          "Box Model",
+          "Posicionamiento"
+        ]
+      },
+      {
+        "nombreModulo": "CSS Avanzado",
+        "temas": [
+          "Flexbox",
+          "Grid",
+          "Animaciones"
+        ]
+      }
+    ],
+    "experto": {
+      "id": "EXP002",
+      "nombreCompleto": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "nacionalidad": "Colombiano",
+      "biografia": "Diseñador web especializado en CSS y UX."
     },
-    {
-        "imagen": "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg",
-        "titulo": "JavaScript desde Cero",
-        "profesor": "Laura Ruiz",
-        "progreso": 20,
-        "leccionesCompletadas": 5,
-        "totalLecciones": 20
-    }
+    "precio": 70,
+    "garantia": [
+      "Lifetime access",
+      "Certificate of completion",
+      "30-day money-back guarantee",
+      "Direct instructor support"
+    ]
+  },
+  {
+    "codigo": "CURSO003",
+    "nivel": "Básico",
+    "duracion": "5 semanas",
+    "titulo": "JavaScript desde Cero",
+    "categoria": "Desarrollo Web",
+    "descripcion": "Aprende JavaScript desde lo más básico hasta conceptos intermedios.",
+    "prerequisitos": "Conocimientos básicos de HTML y CSS",
+    "resultados": [
+      "Entender la programación en JavaScript",
+      "Crear scripts interactivos para páginas web"
+    ],
+    "estructuraCurso": [
+      {
+        "nombreModulo": "Introducción a JavaScript",
+        "temas": [
+          "Sintaxis básica",
+          "Variables y tipos de datos",
+          "Funciones"
+        ]
+      },
+      {
+        "nombreModulo": "JavaScript Avanzado",
+        "temas": [
+          "DOM",
+          "Eventos",
+          "Fetch API"
+        ]
+      }
+    ],
+    "experto": {
+      "id": "EXP003",
+      "nombreCompleto": "Laura Ruiz",
+      "email": "laura.ruiz@example.com",
+      "nacionalidad": "Argentina",
+      "biografia": "Desarrolladora JavaScript con 8 años de experiencia."
+    },
+    "precio": 80,
+    "garantia": [
+      "Lifetime access",
+      "Certificate of completion",
+      "30-day money-back guarantee",
+      "Direct instructor support"
+    ]
+  }
 ]
