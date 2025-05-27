@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS Portal - Assignments</title>
-    <link rel="stylesheet" href="../css/Courses.css">
-    </head>
+    <link rel="stylesheet" href="../CSS/Courses.css">
+    <link rel="stylesheet" href="../CSS/Assignments.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
 <body>
 
     <header class="encabezado">
@@ -21,7 +23,8 @@
                 </ul>
             </nav>
             <div class="controles">
-                <button aria-label="Toggle dark mode">🌙</button> <label for="language-select"></label>
+                <button aria-label="Toggle dark mode">🌙</button> 
+                <label for="language-select"></label>
                 <select id="language-select">
                     <option value="en">English</option>
                     <option value="es">Español</option>
@@ -35,12 +38,251 @@
         </div>
     </header>
 
-<!-- Main content placeholder -->
-<main>
-    <h2 class="Subtitle">Assignments</h2>
-    <!-- Existing content should be here -->
+<main class="assignments-main">
+    <h2 class="page-title">Your Assignments</h2>
+
+    <div class="alert-banner">
+        ⚠️ <span>Some assignments require course completion before submission.</span>
+    </div>
+
+    <div class="filters">
+        <button class="filter-button active" data-filter="all">
+            📋 All </button>
+        <button class="filter-button" data-filter="pending">
+            ⏳ Pending </button>
+        <button class="filter-button" data-filter="completed">
+            ✅ Completed </button>
+        <button class="filter-button" data-filter="overdue">
+            ⚠️ Overdue </button>
+        <button class="filter-button" data-filter="locked">
+            🔒 Locked </button>
+    </div>
+
+    <div class="assignments-container">
+
+        <div class="assignment-card" data-category="pending">
+            <div class="card-header">
+                <div class="course-info"> 
+                    <span class="course-icon">💻</span> 
+                    <h3>Web Development</h3>
+                    <div class="course-underline"></div> 
+                </div>
+                <div class="card-status status-pending">
+                    ⏳ Pending 
+                </div>
+            </div>
+            <div class="card-content">
+                <h4>Final Project: E-commerce Platform</h4>
+                <p class="course-name">Full Stack Development</p>
+                <p class="due-date">
+                    📅 Due: Mar 14, 2024 
+                </p>
+                <p class="description">
+                    Build a complete e-commerce platform using React, Node.js, and MongoDB. Implement user authentication, product management, shopping cart, and payment processing.
+                </p>
+                <div class="details-row">
+                    <span class="detail-item">🎯 Points: 100</span> 
+                    <span class="detail-item">📝 Type: Project</span> 
+                    <span class="detail-item">📚 Required Modules: Frontend Development, Backend Integration, Database Design</span> 
+                </div>
+                <div class="card-footer">
+                    <p class="attachments">📎 2 attachment(s)</p> 
+                    <button class="submit-button" 
+                            data-assignment-id="webdev-final"
+                            data-assignment-title="Final Project: E-commerce Platform"
+                            data-course-name="Full Stack Development"
+                            data-due-date="Mar 14, 2024"
+                            data-points="100"
+                            data-type="Project"
+                            data-modules="Frontend Development, Backend Integration, Database Design"
+                            data-description="Build a complete e-commerce platform using React, Node.js, and MongoDB. Implement user authentication, product management, shopping cart, and payment processing.">
+                        ⬆️ Submit Assignment 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="assignment-card" data-category="locked">
+            <div class="card-header">
+                <div class="course-info"> 
+                    <span class="course-icon">📊</span> 
+                    <h3>Data Science</h3>
+                    <div class="course-underline"></div> 
+                </div>
+                <div class="card-status status-locked">
+                    🔒 Locked 
+                </div>
+            </div>
+            <div class="card-content">
+                <h4>Data Analysis Report</h4>
+                <p class="course-name">Data Science Fundamentals</p>
+                <p class="unlock-condition">
+                    🔒 Complete the course to unlock (60% completed) 
+                </p>
+                <p class="due-date">
+                    📅 Due: Mar 19, 2024 
+                </p>
+                <p class="description">
+                    Analyze the provided dataset using Python and Pandas. Create visualizations and write a comprehensive report on your findings.
+                </p>
+                <div class="details-row">
+                    <span class="detail-item">🎯 Points: 50</span> 
+                    <span class="detail-item">📝 Type: Report</span> 
+                    <span class="detail-item">📚 Required Modules: Data Analysis, Statistical Methods</span> 
+                </div>
+                <div class="card-footer">
+                    <p class="attachments">📎 1 attachment(s)</p> 
+                    <button class="submit-button disabled" 
+                            data-assignment-id="datasci-report"
+                            data-assignment-title="Data Analysis Report"
+                            data-course-name="Data Science Fundamentals"
+                            data-due-date="Mar 19, 2024"
+                            data-points="50"
+                            data-type="Report"
+                            data-modules="Data Analysis, Statistical Methods"
+                            data-description="Analyze the provided dataset using Python and Pandas. Create visualizations and write a comprehensive report on your findings.">
+                        🔒 Complete Course to Submit 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="assignment-card" data-category="completed">
+            <div class="card-header">
+                <div class="course-info"> 
+                    <span class="course-icon">🎨</span> 
+                    <h3>Design</h3>
+                    <div class="course-underline"></div> 
+                </div>
+                <div class="card-status status-completed">
+                    ✅ Completed 
+                </div>
+            </div>
+            <div class="card-content">
+                <h4>UI/UX Case Study</h4>
+                <p class="course-name">User Interface Design</p>
+                <p class="due-date">
+                    📅 Due: Feb 27, 2024 
+                </p>
+                <p class="description">
+                    Complete a case study on the redesign of a popular mobile application. Include user research, wireframes, and final design mockups.
+                </p>
+                <div class="details-row">
+                    <span class="detail-item">🎯 Points: 75</span> 
+                    <span class="detail-item">📝 Type: Case Study</span> 
+                    <span class="detail-item">📚 Required Modules: User Research, Interface Design</span> 
+                </div>
+                <div class="card-footer">
+                    <button class="submit-button submitted" 
+                            data-assignment-id="design-casestudy"
+                            data-assignment-title="UI/UX Case Study"
+                            data-course-name="User Interface Design"
+                            data-due-date="Feb 27, 2024"
+                            data-points="75"
+                            data-type="Case Study"
+                            data-modules="User Research, Interface Design"
+                            data-description="Complete a case study on the redesign of a popular mobile application. Include user research, wireframes, and final design mockups.">
+                        ✅ Submitted 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="assignment-card" data-category="locked">
+            <div class="card-header">
+                <div class="course-info"> 
+                    <span class="course-icon">⚡</span> 
+                    <h3>Computer Science</h3>
+                    <div class="course-underline"></div> 
+                </div>
+                <div class="card-status status-locked">
+                    🔒 Locked 
+                </div>
+            </div>
+            <div class="card-content">
+                <h4>Algorithm Implementation</h4>
+                <p class="course-name">Advanced Algorithms</p>
+                <p class="unlock-condition">
+                    🔒 Complete the course to unlock (40% completed) 
+                </p>
+                <p class="due-date">
+                    📅 Due: Feb 24, 2024 
+                </p>
+                <p class="description">
+                    Implement and optimize three different sorting algorithms. Compare their performance and write a detailed analysis.
+                </p>
+                <div class="details-row">
+                    <span class="detail-item">🎯 Points: 60</span> 
+                    <span class="detail-item">📝 Type: Implementation</span> 
+                    <span class="detail-item">📚 Required Modules: Algorithm Analysis, Data Structures</span> 
+                </div>
+                <div class="card-footer">
+                    <p class="attachments">📎 1 attachment(s)</p> 
+                    <button class="submit-button disabled" 
+                            data-assignment-id="compsci-algo"
+                            data-assignment-title="Algorithm Implementation"
+                            data-course-name="Advanced Algorithms"
+                            data-due-date="Feb 24, 2024"
+                            data-points="60"
+                            data-type="Implementation"
+                            data-modules="Algorithm Analysis, Data Structures"
+                            data-description="Implement and optimize three different sorting algorithms. Compare their performance and write a detailed analysis.">
+                        🔒 Complete Course to Submit 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </main>
 
+<div id="submissionModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <div class="modal-header-submission">
+            <h2>Submit Assignment</h2>
+            <p><span id="modalCourseName"></span> | Due: <span id="modalDueDate"></span></p>
+        </div>
+
+        <div class="modal-body-submission">
+            <h3 id="modalAssignmentTitle"></h3>
+            <p id="modalAssignmentDescription"></p>
+            <div class="modal-details-row">
+                <span class="detail-item">🎯 Points: <span id="modalPoints"></span></span> 
+                <span class="detail-item">📝 Type: <span id="modalType"></span></span> 
+                <span class="detail-item">📚 Required Modules: <span id="modalModules"></span></span> 
+            </div>
+
+            <div class="form-group">
+                <label for="submissionNotes">Submission Notes <span class="required-star">*</span></label>
+                <textarea id="submissionNotes" placeholder="Describe your work and any important notes about your submission..." rows="5"></textarea>
+            </div>
+
+            <div class="attachments-section">
+                <p class="attachments-title">Attachments (optional)</p>
+                <div class="upload-area-modal">
+                    <i class="fas fa-paperclip upload-icon"></i>
+                    <p>Drag and drop files here or</p>
+                    <input type="file" id="fileUploadModal" multiple accept=".pdf,.doc,.docx,.txt,.zip,.rar,.7z,.jpg,.jpeg,.png">
+                    <label for="fileUploadModal" class="browse-button">Browse Files</label>
+                    <p class="supported-formats">Supported files: PDF, DOC, DOCX, TXT, ZIP, RAR, 7Z, JPG, PNG</p>
+                    <ul id="selectedFilesList" class="selected-files-preview"></ul>
+                </div>
+            </div>
+
+            <div id="requiredFieldsAlert" class="alert-warning" style="display: none;">
+                ⚠️ Please fill in all required fields before submitting.
+            </div>
+        </div>
+
+        <div class="modal-footer-submission">
+            <button id="cancelSubmissionBtn" class="cancel-modal-button">Cancel</button>
+            <button id="submitAssignmentBtn" class="submit-modal-button">Submit Assignment</button>
+        </div>
+    </div>
+</div>
+
+<script src="../JS/modo-tema-assignments.js" defer></script>
 <script src="../JS/Assignments.js"></script>
 </body>
 </html>

@@ -1,7 +1,540 @@
-.encabezado h1 {
-  font-size: 1.2rem;
+/* css/Assignments.css */
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Fuente similar a la de la imagen */
+    background-color: #f0f2f5; /* Fondo gris claro */
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-menu li a {
-  font-size: 1rem;
+.assignments-main {
+    width: 100%;
+    max-width: 960px; /* Ancho máximo para el contenido, similar al de la imagen */
+    padding: 30px 20px; /* Más padding vertical */
+    box-sizing: border-box;
+    margin: 0 auto; /* Centrar el contenedor principal */
+}
+
+.page-title {
+    color: #2c3e50; /* Color oscuro */
+    font-size: 2.5em; /* Tamaño de fuente más grande */
+    margin-bottom: 25px;
+    text-align: left;
+    font-weight: 600; /* Ligeramente menos grueso que 700 para la imagen */
+}
+
+/* --- Banner de advertencia --- */
+.alert-banner {
+    background-color: #fff3cd; /* Amarillo claro */
+    color: #856404; /* Texto marrón oscuro */
+    border: 1px solid #ffeeba;
+    border-radius: 6px; /* Bordes redondeados más sutiles */
+    padding: 12px 20px; /* Padding ajustado */
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    font-weight: 500; /* Ligeramente más grueso */
+}
+
+.alert-banner > span:first-child { /* Apunta al primer emoji en el alert-banner */
+    margin-right: 10px;
+    font-size: 1.2em; /* Tamaño del emoji */
+}
+
+/* --- Filtros (botones de categoría) --- */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; /* Espacio más ajustado entre botones */
+    margin-bottom: 30px;
+}
+
+.filter-button {
+    background-color: #f8f9fa; /* Fondo blanco-gris claro */
+    color: #6c757d; /* Gris para los no activos */
+    border: 1px solid #dee2e6; /* Borde más sutil */
+    border-radius: 20px; /* Bordes redondeados tipo pill */
+    padding: 8px 18px; /* Padding ajustado */
+    font-size: 0.9em;
+    font-weight: 500; /* Menos grueso */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Espacio entre emoji y texto */
+}
+
+.filter-button:hover {
+    background-color: #e9ecef; /* Gris más oscuro al hover */
+    color: #495057;
+    border-color: #ced4da;
+}
+
+.filter-button.active {
+    background-color: #007bff; /* Azul para el activo */
+    color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2); /* Sombra más suave */
+}
+
+.filter-button.active:hover {
+    background-color: #0056b3; /* Azul más oscuro al activo/hover */
+    border-color: #0056b3;
+}
+
+/* --- Contenedor de asignaciones --- */
+.assignments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* --- Tarjeta de asignación individual --- */
+.assignment-card {
+    background-color: #fff;
+    border-radius: 8px; /* Bordes más sutiles */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra más sutil y extendida */
+    padding: 25px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Mantener relative para el padding o cualquier otro elemento que se posicione sobre él */
+    border-left: 5px solid; /* Borde izquierdo para el estado */
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assignment-card:hover {
+    transform: translateY(-3px); /* Menos desplazamiento */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Sombra más pronunciada al hover */
+}
+
+
+/* Estados de las tarjetas (color del borde izquierdo y etiqueta de estado) */
+/* Usando colores de las imágenes */
+.assignment-card[data-category="pending"] { border-left-color: transparent; }
+.assignment-card[data-category="locked"] { border-left-color: transparent; }
+.assignment-card[data-category="completed"] { border-left-color: #28a745; } /* Verde para completado */
+
+
+.card-header {
+    display: flex; 
+    align-items: flex-start; /* Alinea los ítems en la parte superior (icono y título) */
+    justify-content: space-between; /* Empuja el status a la derecha */
+    margin-bottom: 15px; /* Espacio debajo del encabezado de la tarjeta */
+}
+
+.card-header .course-info { /* Nuevo contenedor para el icono y el título del curso */
+    display: flex;
+    flex-direction: column; /* Apila el icono/título y la línea */
+    align-items: flex-start;
+}
+
+
+.course-icon { /* Estilo para el emoji del curso */
+    font-size: 1.8em; /* Tamaño del emoji */
+    margin-right: 15px; /* Separación del título */
+    display: inline-block; /* Para asegurar que el margin-right funcione */
+    vertical-align: middle; /* Alinea verticalmente con el texto del h3 */
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #2c3e50;
+    font-weight: 600;
+    /* Quitar margin-bottom de aquí ya que la línea lo reemplaza */
+    display: inline-block; /* Permite que el elemento se comporte como bloque pero alinee el underline */
+}
+
+/* Estilo para la línea azul debajo del título del curso */
+.course-underline {
+    width: 60px; /* Ancho de la línea */
+    height: 4px; /* Grosor de la línea */
+    background-color: #007bff; /* Color azul, igual que el de los filtros activos */
+    border-radius: 2px; /* Bordes redondeados */
+    margin-top: 5px; /* Espacio entre el título y la línea */
+    margin-left: 15px; /* Ajusta este margen para que la línea quede debajo del texto, asumiendo un margen en .course-icon */
+}
+
+
+.card-status {
+    /* No necesitamos position: absolute aquí, ya que flexbox lo maneja */
+    /* top: 25px; / / Eliminar */
+    /* right: 30px; / / Eliminar */
+    border-radius: 15px;
+    padding: 6px 12px; /* Padding más compacto */
+    font-size: 0.8em; /* Tamaño de fuente más pequeño */
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* Los emojis de estado como '⏳' ya están en el HTML */
+}
+
+/* Colores de estado (ahora con los colores exactos de las imágenes) */
+.status-pending { background-color: #fff3cd; color: #ffc107; } /* Amarillo de Bootstrap, texto más oscuro */
+.status-locked { background-color: #e9ecef; color: #6c757d; } /* Gris de Bootstrap, texto más oscuro */
+.status-completed { background-color: #d4edda; color: #28a745; } /* Verde de Bootstrap, texto más oscuro */
+.status-overdue { background-color: #f8d7da; color: #dc3545; } /* Rojo de Bootstrap, texto más oscuro */
+
+
+.card-content h4 { /* Título de la asignación: "Final Project: E-commerce Platform" */
+    font-size: 1.3em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #34495e;
+    margin-bottom: 5px; /* Menos margen */
+    font-weight: 600;
+}
+
+.course-name { /* Subtítulo: "Full Stack Development" */
+    color: #007bff; /* Azul primario */
+    font-size: 0.85em; /* Más pequeño */
+    margin-bottom: 12px; /* Espacio ajustado */
+    font-weight: 500;
+}
+
+.due-date {
+    color: #6c757d; /* Gris para la fecha */
+    font-size: 0.85em; /* Más pequeño */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.due-date span:first-child { /* Apunta al emoji de calendario */
+    font-size: 1em; /* Ajusta el tamaño si es necesario */
+}
+
+.unlock-condition {
+    color: #dc3545; /* Rojo para la condición de desbloqueo, como en la imagen */
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em; /* Tamaño ajustado */
+}
+
+.unlock-condition span:first-child { /* Apunta al emoji de candado */
+    font-size: 1em; /* Ajusta el tamaño si es necesario */
+}
+
+
+.description {
+    color: #555;
+    font-size: 0.95em; /* Ligeramente más pequeño */
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.details-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    color: #6c757d; /* Gris para el texto de detalle */
+    font-size: 0.85em; /* Más pequeño */
+    display: flex;
+    align-items: center;
+    gap: 6px; /* Espacio más ajustado */
+}
+
+.detail-item span:first-child { /* Apunta al emoji de detalle (🎯, 📝, 📚) */
+    font-size: 1em; /* Ajusta el tamaño si es necesario */
+}
+
+.attachments {
+    color: #6c757d; /* Gris para adjuntos */
+    font-size: 0.85em; /* Más pequeño */
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.attachments span:first-child { /* Apunta al emoji de clip */
+    font-size: 1em; /* Ajusta el tamaño si es necesario */
+}
+
+/* Contenedor de pie de tarjeta para el botón y adjuntos */
+.card-footer {
+    display: flex;
+    justify-content: space-between; /* Alinea uno a la izquierda y otro a la derecha */
+    align-items: center;
+    padding-top: 15px; /* Espacio superior para separar del contenido */
+    border-top: 1px solid #eee; /* Línea separadora */
+    margin-top: 15px; /* Espacio superior para la línea */
+}
+
+/* Botones de acción (Submit / Complete Course / Submitted) */
+.submit-button {
+    background-color: #007bff; /* Azul por defecto */
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* Bordes más sutiles */
+    padding: 10px 20px; /* Padding ajustado */
+    font-size: 0.95em; /* Tamaño ajustado */
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre emoji y texto */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-button span:first-child { /* Apunta al emoji del botón */
+    font-size: 1em; /* Ajusta el tamaño si es necesario */
+}
+
+.submit-button:hover {
+    background-color: #0069d9;
+    transform: translateY(-1px);
+}
+
+.submit-button.disabled {
+    background-color: #e9ecef; /* Gris claro */
+    color: #6c757d; /* Texto gris */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.submit-button.disabled:hover {
+    background-color: #e9ecef;
+    transform: none;
+}
+
+.submit-button.submitted {
+    background-color: #d4edda; /* Verde muy claro */
+    color: #28a745; /* Texto verde */
+    cursor: default;
+    border: 1px solid #c3e6cb; /* Borde verde claro */
+}
+
+.submit-button.submitted:hover {
+    background-color: #d4edda;
+    transform: none;
+}
+
+
+/* --- Modo Oscuro para Asignaciones --- */
+body.dark-mode {
+    background-color: #212121; /* Fondo gris oscuro */
+    color: #f0f0f0;
+}
+
+body.dark-mode .page-title {
+    color: #f0f0f0;
+}
+
+body.dark-mode .alert-banner {
+    background-color: #3a3a2a; /* Fondo más oscuro */
+    border-color: #5a5a3a;
+    color: #ffda6a; /* Texto más claro */
+}
+
+body.dark-mode .filter-button {
+    background-color: #333;
+    border-color: #555;
+    color: #bbb;
+}
+body.dark-mode .filter-button:hover {
+    background-color: #444;
+    color: #eee;
+    border-color: #777;
+}
+body.dark-mode .filter-button.active {
+    background-color: #4285f4; /* Azul de Google para dark mode */
+    border-color: #4285f4;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(66, 133, 244, 0.3);
+}
+body.dark-mode .filter-button.active:hover {
+    background-color: #3b7ad2;
+    border-color: #3b7ad2;
+}
+
+body.dark-mode .assignment-card {
+    background-color: #2c2c2c;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .assignment-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Modos oscuros para bordes de tarjeta */
+body.dark-mode .assignment-card[data-category="pending"] { border-left-color: transparent; }
+body.dark-mode .assignment-card[data-category="locked"] { border-left-color: transparent; }
+body.dark-mode .assignment-card[data-category="completed"] { border-left-color: #4CAF50; } /* Verde más brillante */
+
+
+body.dark-mode .card-header h3 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .course-underline {
+    background-color: #90CAF9; /* Un azul más claro para la línea en modo oscuro */
+}
+
+body.dark-mode .card-status {
+    background-color: #3a3a3a;
+    color: #f0f0f0;
+}
+body.dark-mode .status-pending { background-color: #5a4a2a; color: #ffc107; }
+body.dark-mode .status-locked { background-color: #4a4a4a; color: #aeb6bf; }
+body.dark-mode .status-completed { background-color: #3a5a3a; color: #8bc34a; }
+body.dark-mode .status-overdue { background-color: #6a3a3a; color: #ef9a9a; }
+
+
+body.dark-mode .card-content h4 {
+    color: #f0f0f0;
+}
+body.dark-mode .course-name {
+    color: #90caf9;
+}
+body.dark-mode .due-date,
+body.dark-mode .attachments,
+body.dark-mode .detail-item {
+    color: #bbb;
+}
+body.dark-mode .unlock-condition {
+    color: #ff8a65; /* Naranja más claro en dark mode */
+}
+body.dark-mode .description {
+    color: #ccc;
+}
+
+body.dark-mode .card-footer {
+    border-top-color: #3a3a3a;
+}
+
+body.dark-mode .submit-button {
+    background-color: #4285f4;
+    color: #fff;
+}
+body.dark-mode .submit-button:hover {
+    background-color: #3b7ad2;
+}
+body.dark-mode .submit-button.disabled {
+    background-color: #555;
+    color: #999;
+}
+body.dark-mode .submit-button.disabled:hover {
+    background-color: #555;
+}
+body.dark-mode .submit-button.submitted {
+    background-color: #66bb6a;
+    color: #212121;
+    border-color: #4CAF50;
+}
+body.dark-mode .submit-button.submitted:hover {
+    background-color: #66bb6a;
+}
+
+
+/* Responsive adjustments for Assignments */
+@media (max-width: 768px) {
+    .assignments-main {
+        padding: 20px 15px; /* Más padding en móviles */
+        margin: 10px auto;
+    }
+
+    .page-title {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    .alert-banner {
+        padding: 12px 15px;
+        font-size: 0.85em;
+        margin-bottom: 20px;
+    }
+
+    .filters {
+        flex-direction: row; /* Mantener en fila, pero permitir el wrap */
+        justify-content: flex-start;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .filter-button {
+        flex-grow: 1; /* Permite que los botones crezcan y llenen el espacio */
+        justify-content: center;
+        padding: 10px 12px; /* Más compacto */
+        font-size: 0.85em;
+    }
+
+    .assignment-card {
+        padding: 20px;
+    }
+
+    .card-header {
+        flex-direction: column; /* Apilar elementos */
+        align-items: flex-start;
+        position: static; /* Quitar la posición absoluta en móviles */
+        margin-bottom: 10px;
+        padding-bottom: 0;
+    }
+
+    .card-header .course-info { /* También apila en móviles */
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-status {
+        position: static; /* Quitar la posición absoluta del estado */
+        margin-top: 10px; /* Espacio para el estado debajo del título de la asignación */
+        align-self: flex-start;
+    }
+
+    .card-content h4 {
+        font-size: 1.3em;
+    }
+
+    .description {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+    }
+
+    .details-row {
+        flex-direction: column; /* Apilar detalles */
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .card-footer {
+        flex-direction: column; /* Apilar adjuntos y botón */
+        gap: 15px;
+        align-items: flex-start; /* Alinear a la izquierda */
+        padding-top: 15px;
+        margin-top: 15px;
+    }
+
+    .attachments {
+        margin-bottom: 0; /* No margin-bottom si es el primero en un flex-column */
+    }
+
+    .submit-button {
+        width: 100%; /* Botón de ancho completo */
+        justify-content: center; /* Centrar contenido del botón */
+        padding: 12px 15px;
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2.2em;
+    }
+    .assignment-card {
+        padding: 15px;
+    }
+    .filter-button {
+        font-size: 0.8em; /* Más pequeño para pantallas muy pequeñas */
+        padding: 8px 10px;
+    }
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LMS Portal - Dashboard</title>
-    <link rel="stylesheet" href="css/srtyle.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
@@ -28,7 +28,7 @@
                     <option value="fr">Français</option>
                 </select>
                 <div class="foto-label">
-                    <img src="../IMG/Courses/Perfil.jpeg" alt="User Photo" class="foto-preview">
+                    <img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg" alt="User Photo" class="foto-preview">
                     <span class="nombre-usuario">John Doe</span>
                 </div>
             </div>
@@ -56,7 +56,7 @@
         <section class="enrolled-courses-section">
             <div class="enrolled-courses-header">
                 <h2>My Enrolled Courses</h2>
-<a href="../HTML/Courses.html" class="browse-more-btn">Browse More Courses</a>
+            <a href="../LMS-Portal/HTML/Courses.html" class="browse-more-btn">Browse More Courses</a>
             </div>
             <div class="course-cards-grid">
                 <div class="course-card">
@@ -70,7 +70,9 @@
                             <span class="completion-percentage green">65% Complete</span>
                             <span class="lessons-count">13/20 Lessons</span>
                         </div>
-                        <button class="continue-learning-btn">Continue Learning</button>
+                        <button class="continue-learning-btn" onclick="location.href='HTML/Courses.html'"
+>Continue Learning</button>
+
                     </div>
                 </div>
                 <div class="course-card">
@@ -84,7 +86,9 @@
                             <span class="completion-percentage green">30% Complete</span>
                             <span class="lessons-count">6/20 Lessons</span>
                         </div>
-                        <button class="continue-learning-btn">Continue Learning</button>
+                        <button class="continue-learning-btn" onclick="location.href='HTML/Courses.html'"
+>Continue Learning</button>
+
                     </div>
                 </div>
                 <div class="course-card">
@@ -98,7 +102,9 @@
                             <span class="completion-percentage green">85% Complete</span>
                             <span class="lessons-count">17/20 Lessons</span>
                         </div>
-                        <button class="continue-learning-btn">Continue Learning</button>
+                        <button class="continue-learning-btn" onclick="location.href='HTML/Courses.html'"
+>Continue Learning</button>
+
                     </div>
                 </div>
             </div>
@@ -141,6 +147,7 @@
 
     </main>
 
-    <script src="js/scripr.js"></script>
+    <script src="JS/script.js"></script>
+    <script src="JS/toggleHeaderColor.js"></script>
 </body>
 </html>

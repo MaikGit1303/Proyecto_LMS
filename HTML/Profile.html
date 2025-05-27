@@ -1,46 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMS Portal - Profile</title>
-    <link rel="stylesheet" href="../css/Courses.css">
-    </head>
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="../css/Courses.css"> <link rel="stylesheet" href="../css/style.css">   </head>
+    <link rel="stylesheet" href="../CSS/Profile.css">
 <body>
-
     <header class="encabezado">
         <h1>LMS Portal</h1>
-        <div class="nav-contenedor">
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="../index.html" >Dashboard</a></li>
-                    <li><a href="../HTML/Courses.html" >Courses</a></li>
-                    <li><a href="../HTML/Assignments.html">Assignments</a></li>
-                    <li><a href="../HTML/Progress.html">Progress</a></li>
-                    <li><a href="../HTML/Profile.html" class="activo">Profile</a></li>
-                </ul>
-            </nav>
+        <nav class="nav-contenedor">
+            <ul class="nav-menu">
+                <li><a href="../index.html">Dashboard</a></li>
+                <li><a href="../HTML/Courses.html">Courses</a></li>
+                <li><a href="../HTML/Assignments.html">Assignments</a></li>
+                <li><a href="../HTML/Progress.html">Progress</a></li>
+                <li><a href="../HTML/Profile.html" class="activo">Profile</a></li>
+            </ul>
             <div class="controles">
-                <button aria-label="Toggle dark mode">🌙</button> <label for="language-select"></label>
-                <select id="language-select">
-                    <option value="en">English</option>
+                <button aria-label="Cambiar tema">🌙</button> <label for="language-select" class="sr-only"></label>
+                <select id="language-select" aria-label="Seleccionar idioma">
                     <option value="es">Español</option>
-                    <option value="fr">Français</option>
+                    <option value="en">English</option>
                 </select>
                 <div class="foto-label">
                     <img src="../IMG/Courses/Perfil.jpeg" alt="User Photo" class="foto-preview">
-                    <span class="nombre-usuario">John Doe</span>
+                    <span class="nombre-usuario">Usuario</span>
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-<!-- Main content placeholder -->
-<main>
-    <h2 class="Subtitle">Profile</h2>
-    <!-- Existing content should be here -->
-</main>
+    <main>
+        <div class="container">
+            <div class="profile-header">
+                <div class="profile-info">
+                    <div class="avatar">
+                        <img src="../IMG/Courses/Perfil.jpeg" alt="Profile Picture" id="profile-picture">
+                        <input type="file" id="file-upload-input" accept="image/*" style="display: none;">
+                    </div>
+                    <h1>John Doe</h1>
+                    <p class="subtitle">Computer Science Student</p>
+                </div>
+            </div>
 
-<script src="../JS/Profile.js"></script>
-</body>
+            <section class="personal-info">
+                <h2>Información Personal</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label for="full-name">Nombre Completo</label>
+                        <input type="text" id="full-name" value="John Doe">
+                    </div>
+                    <div class="info-item">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" value="john.doe@example.com">
+                    </div>
+                    <div class="info-item">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" value="+1 234 567 890">
+                    </div>
+                    <div class="info-item">
+                        <label for="address">Dirección</label>
+                        <input type="text" id="address" value="123 Main St, Anytown">
+                    </div>
+                </div>
+            </section>
+
+            <section class="academic-info">
+                <h2>Información Académica</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label for="major">Carrera</label>
+                        <input type="text" id="major" value="Ingeniería en Sistemas">
+                    </div>
+                    <div class="info-item">
+                        <label for="university">Universidad</label>
+                        <input type="text" id="university" value="Universidad XYZ">
+                    </div>
+                    <div class="info-item">
+                        <label for="enrollment-date">Fecha de Inscripción</label>
+                        <input type="date" id="enrollment-date" value="2022-08-15">
+                    </div>
+                </div>
+            </section>
+
+            <section class="progress-overview">
+                <h2>Resumen de Progreso</h2>
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <div class="number">12</div>
+                        <div class="label">Cursos Completados</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="number">85%</div>
+                        <div class="label">Progreso General</div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="number">4.5</div>
+                        <div class="label">GPA Promedio</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="preferences">
+                <h2>Preferencias</h2>
+                <div class="preference-item">
+                    <input type="checkbox" id="email-notifications" checked>
+                    <label for="email-notifications">Notificaciones por Correo Electrónico</label>
+                    <p class="description">Recibe actualizaciones sobre nuevos cursos y asignaciones.</p>
+                </div>
+                <div class="preference-item">
+                    <input type="checkbox" id="sms-notifications">
+                    <label for="sms-notifications">Notificaciones por SMS</label>
+                    <p class="description">Recibe recordatorios importantes en tu teléfono.</p>
+                </div>
+                <div class="preference-item">
+                    <input type="checkbox" id="dark-mode-preference">
+                    <label for="dark-mode-preference">Modo Oscuro Predeterminado</label>
+                    <p class="description">Activa el tema oscuro por defecto al iniciar la aplicación.</p>
+                </div>
+                <div class="buttons">
+                    <button class="cancel-button">Cancelar</button>
+                    <button class="save-button">Guardar Cambios</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../JS/Profile.js"></script> </body>
 </html>

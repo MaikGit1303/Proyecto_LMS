@@ -2,7 +2,7 @@
 
 > 🖥️ **Proyecto básico de portal educativo (LMS)** con enfoque limpio, modular y listo para escalar.
 
----
+## Si quieres ver la pagina principal del proyecto, puedes hacerlo en el siguiente enlace: https://portal-lms.netlify.app/
 
 ## 🌟 Descripción General
 

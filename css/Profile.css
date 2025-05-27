@@ -1,7 +1,445 @@
-.encabezado h1 {
-  font-size: 1.2rem;
+/* css/style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #eef2f7; /* Color de fondo por defecto del body */
+    display: flex;
+    flex-direction: column; /* Importante para que el header y main se apilen */
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de fondo */
 }
 
-.nav-menu li a {
-  font-size: 1rem;
+main {
+    width: 100%;
+    max-width: 960px; /* Limita el ancho del contenido principal */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye padding en el ancho */
+}
+
+.Subtitle {
+    color: #2c3e50;
+    font-size: 2.2em;
+    margin-bottom: 25px;
+    text-align: left;
+    padding-left: 10px; /* Alineado con el contenido del container */
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 100%; /* Ocupa todo el ancho disponible en el main */
+    max-width: 960px; /* Mantiene el mismo max-width que el main */
+    margin: 0 auto; /* Centra el contenedor */
+}
+
+/* === ESTILOS DEL ENCABEZADO DE PERFIL (DEGRADADO Y SILUETA) === */
+.profile-header {
+    background: linear-gradient(to right, #2196F3, #0d47a1); /* Degradado azul similar al de las imágenes */
+    color: #fff;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    text-align: center;
+    position: relative;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+}
+
+.cover-photo {
+    display: none; /* Oculta la capa de la imagen de portada, ya que usamos color sólido */
+}
+
+.profile-info {
+    position: relative;
+    z-index: 1; /* Asegura que el contenido esté sobre el fondo */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 120px; /* Tamaño del avatar */
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px; /* Espacio entre avatar y nombre */
+    border: 5px solid #fff; /* Borde blanco alrededor del avatar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para el efecto "flotante" */
+    background-color: #fff; /* Fondo blanco para la silueta */
+    cursor: pointer; /* Indica que la imagen es clickeable */
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+}
+
+.profile-info h1 {
+    margin-bottom: 5px;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #fff; /* Nombre en blanco */
+}
+
+.profile-info .subtitle {
+    color: #e0e0e0; /* Subtítulo en un tono de blanco/gris claro */
+    font-size: 1.1em;
+    font-weight: 300;
+}
+/* === FIN ESTILOS DEL ENCABEZADO DE PERFIL === */
+
+
+section {
+    padding: 25px 30px;
+    border-bottom: 1px solid #f0f0f0; /* Separadores sutiles entre secciones */
+}
+
+section:last-of-type {
+    border-bottom: none; /* La última sección no necesita un borde inferior */
+}
+
+section h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item label {
+    display: block;
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.info-item input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #fcfcfc;
+    color: #444;
+}
+
+.progress-overview .overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.progress-overview .overview-card {
+    background-color: #f7f9fb;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.progress-overview .overview-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.progress-overview .number {
+    font-size: 2.8em;
+    color: #4a90e2;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.progress-overview .label {
+    color: #666;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.preferences .preference-item {
+    margin-bottom: 20px;
+    display: flex; /* Para alinear el checkbox y el texto */
+    align-items: flex-start; /* Alinea los ítems al inicio */
+    flex-wrap: wrap; /* Permite que la descripción se envuelva abajo */
+}
+
+.preferences input[type="checkbox"] {
+    margin-top: 5px;
+    margin-right: 12px;
+    transform: scale(1.3);
+    accent-color: #4a90e2;
+}
+
+.preferences label {
+    font-weight: 600;
+    color: #333;
+    flex-grow: 1;
+}
+
+.preferences .description {
+    color: #777;
+    font-size: 0.9em;
+    margin-left: 25px;
+    line-height: 1.5;
+    flex-basis: 100%;
+    margin-top: 5px;
+}
+
+.preferences .buttons {
+    margin-top: 30px;
+    text-align: right;
+}
+
+.preferences button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.preferences .cancel-button {
+    background-color: #e0e0e0;
+    color: #555;
+}
+
+.preferences .cancel-button:hover {
+    background-color: #d0d0d0;
+    transform: translateY(-2px);
+}
+
+.preferences .save-button {
+    background-color: #4a90e2;
+    color: #fff;
+}
+
+.preferences .save-button:hover {
+    background-color: #3a7bd5;
+    transform: translateY(-2px);
+}
+
+/* === ESTILOS PARA EL MODO OSCURO === */
+body.dark-mode {
+    background-color: #1a1a1a; /* Fondo oscuro */
+    color: #f0f0f0; /* Texto claro */
+}
+
+body.dark-mode .encabezado {
+    background-color: #333; /* Encabezado más oscuro */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .nav-menu li a {
+    color: #ccc;
+}
+
+body.dark-mode .nav-menu li a:hover,
+body.dark-mode .nav-menu li a.activo {
+    color: #90caf9; /* Azul claro para enlaces */
+    border-color: #90caf9;
+}
+
+body.dark-mode .controles button {
+    color: #ccc;
+}
+
+body.dark-mode .controles select {
+    background-color: #444;
+    border-color: #666;
+    color: #f0f0f0;
+}
+
+body.dark-mode .foto-preview {
+    border-color: #90caf9;
+}
+
+body.dark-mode .nombre-usuario {
+    color: #f0f0f0;
+}
+
+body.dark-mode .Subtitle,
+body.dark-mode section h2 {
+    color: #f0f0f0;
+}
+
+body.dark-mode .container {
+    background-color: #2c2c2c; /* Fondo del contenedor del perfil oscuro */
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .profile-header {
+    background: linear-gradient(to right, #3f51b5, #1a237e); /* Degradado oscuro para el header del perfil */
+}
+
+body.dark-mode .avatar {
+    border-color: #ccc; /* Borde blanco/gris claro en modo oscuro */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada en modo oscuro */
+}
+
+body.dark-mode .info-item label {
+    color: #bbb;
+}
+
+body.dark-mode .info-item input {
+    background-color: #3a3a3a;
+    border-color: #555;
+    color: #f0f0f0;
+}
+
+body.dark-mode .progress-overview .overview-card {
+    background-color: #3a3a3a;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .progress-overview .number {
+    color: #90caf9;
+}
+
+body.dark-mode .progress-overview .label {
+    color: #bbb;
+}
+
+body.dark-mode .preferences label {
+    color: #f0f0f0;
+}
+
+body.dark-mode .preferences .description {
+    color: #aaa;
+}
+
+body.dark-mode .preferences .cancel-button {
+    background-color: #555;
+    color: #f0f0f0;
+}
+
+body.dark-mode .preferences .cancel-button:hover {
+    background-color: #666;
+}
+
+body.dark-mode .preferences .save-button {
+    background-color: #90caf9;
+    color: #1a1a1a;
+}
+
+body.dark-mode .preferences .save-button:hover {
+    background-color: #64b5f6;
+}
+/* === FIN ESTILOS PARA EL MODO OSCURO === */
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .Subtitle {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .profile-header {
+        padding: 40px 15px;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+        border: 4px solid #fff;
+    }
+
+    .profile-info h1 {
+        font-size: 1.8em;
+    }
+
+    .profile-info .subtitle {
+        font-size: 1em;
+    }
+
+    section {
+        padding: 20px 15px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .info-grid,
+    .progress-overview .overview-grid {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 15px;
+    }
+
+    .info-item input {
+        padding: 10px;
+    }
+
+    .progress-overview .number {
+        font-size: 2.2em;
+    }
+
+    .preferences .preference-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .preferences input[type="checkbox"] {
+        margin-bottom: 10px;
+    }
+
+    .preferences .description {
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .preferences .buttons {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .preferences button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Pequeño ajuste para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .profile-header {
+        padding: 30px 10px;
+    }
+
+    .avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .profile-info h1 {
+        font-size: 1.6em;
+    }
 }
